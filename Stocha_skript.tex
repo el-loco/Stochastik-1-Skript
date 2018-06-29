@@ -1379,8 +1379,12 @@ P^{Z|Y=y}(A):=E(1_A(Z)|Y=y)\quad\text{ für } A\in\f_Z\]
 eine reguläre bedingte Verteilung definiert wird.\\
 \\
 
-\underline{\underline{\underline{\underline{\underline{\textbf{\huge{DIES IST ABER FALSCH!}}}}}}}\\
-Nur wenn z.B. $\Omega_2$ polnischer Raum (vollständig, metrisch und separabel, gestohlen) und $\f_Z$ die Borel-$\sigma$-Algebra (aus der Topologie der Metrik) ist, stimmt das.\\
+%\underline{\underline{\underline{\underline{\underline{\textbf{\huge{DIES IST ABER FALSCH!}}}}}}}\\
+\underline{\large{DIES IST ABER FALSCH!}}\\
+\\
+\\
+Nur wenn z.B. $\Omega_2$ polnischer Raum (vollständig, metrisch und separabel%, gestohlen
+) und $\f_Z$ die Borel-$\sigma$-Algebra (aus der Topologie der Metrik) ist, stimmt das.\\
 $\Ra$ Für $\rbor$-wertige Zufallsvariablen existieren stets bedingte Verteilungen.
 \\
 \\
@@ -1748,75 +1752,83 @@ $\Ra h(k)=0\quad \forall k\in\N_0$
 
 
 
-\iffalse
 
 
 \subsection{Satz (Lehmann-Scheffe)}
 \label{11.8}
-\marginpar{16. Vorlesung, 28.06.2018}
-Sei $g:\mc{P}\ra\R$ erwartungstreu schätzbar und h ein erwartungstreuer Schätzer für $g$ mit $Var_\vartheta(h)<\infty\forall\vartheta$. Dann gilt\begin{enumerate}[label=(\alph*)]
-\item Ist $\tau\in\theta$ suffizient und vollständig für $\mc{P}$, dann ist \[
+\marginpar{18.Vorlesung, 28.06.2018}
+Sei $g:\mc{P}\ra\R$ erwartungstreu schätzbar und h ein erwartungstreuer Schätzer für $g$ mit $Var_\vartheta(h)<\infty\quad\forall\vartheta$. Dann gilt\begin{enumerate}[label=(\alph*)]
+\item Ist $\tau\subseteq\f$ suffizient und vollständig für $\mc{P}$, dann ist \[
 h^*:=E_\bullet(h|z)\]
 der (f.s. eindeutige) UMVUE für $g$.
-\item Ist $T:\Omega\ra\Omega'$ eine suffiziente und vollständige Statistik, dann ist $f^*\circ T$ mit $f^*(t)=E_\bullet(H|T=r)$ der (f.s. eindeutige) UMVUE für $g$.
+\item Ist $T:\Omega\ra\Omega'$ eine suffiziente und vollständige Statistik, dann ist $f^*\circ T$ mit $f^*(t)=E_\bullet(H|T=t)$ der (f.s. eindeutige) UMVUE für $g$.
 \end{enumerate}
 \beweis
 b) folgt offensichtlich aus a)\\
 Ad a)\\
 Offensichtlich ist $h^*$ unverzerrt. Sei $\tilde{h}$ erwartungstreu mit $Var_\vartheta(\tilde{h})<\infty$. Mit Rao-Blackwell gilt \[
-Var_\vartheta(\tilde{h})\geq Var_\vartheta(E_\bullet(\tilde{h}|z))\quad\forall\vartheta\]
+Var_\vartheta(\tilde{h})\geq Var_\vartheta(E_\bullet(\tilde{h}|\tau))\quad\forall\vartheta\hfill(*)\]
 Aus der Erwartungstreue folgt \[
 E_\vartheta(\underbrace{h^*-E_\bullet(\tilde{h}|z)}_{\tau-messbar})=g(\vartheta)-g(\vartheta)=0\]
-Da $\tau$ vollständig ist, folgt $h^*=E_\bullet(\tilde{h}|\tau)\quad P_\vartheta-f.s.\quad\forall\vartheta$. Nun folgt aus $(*)$ die Varianzminimalität. Die Eindeutigkeit folgt auf \hyperref[11.3]{Satz 11.3}.\QED
+Da $\tau$ vollständig ist, folgt $h^*=E_\bullet(\tilde{h}|\tau)\quad P_\vartheta-f.s.\quad\forall\vartheta$. Nun folgt aus $(*)$ die Varianzminimalität. Die Eindeutigkeit folgt aus \hyperref[11.3]{Satz 11.3}.\QED
 
 
 \subsection{Beispiel}
 \label{11.9}
-Aus den Beispielen \hyperref[11.7]{11.7 b)} und \hyperref[10.15]{10.15 b)} folgt, dass $T(x)=\sumi x_i$ suffizient und vollständig für $\brac{Binom(1,\vartheta)^{\theta  n}:\vartheta\in(0,1)}$\\
+Aus den Beispielen \hyperref[11.7]{11.7 b)} und \hyperref[10.15]{10.15 b)} folgt, dass $T(x)=\sumi x_i$ suffizient und vollständig ist für $\brac{Binom(1,\vartheta)^\stuff:\vartheta\in(0,1)}$\\
 Erwartungstreuer Schätzer ist $\widehat{\vartheta}(x)=\dfrac{1}{n}\sumi x_i$. Dieser ist offensichtlich $\sigma(T)$-messbar. Mit \hyperref[11.8]{Lehmann-Scheffe} ist $\widehat{\vartheta}$ also UMVUE für $\vartheta$.\\
+\\
 Hat man eine suffiziente und vollständige Statistik T, so kann man folgende zwei Möglichkeiten nutzen, um einen UMVUE zu finden:\begin{enumerate}[label=(\roman*)]
-\item Finde einen beliebigen erwartungstreuen Schätzer h und berechne $h^*=E_\bullet(h|T)$
+\item Finde einen beliebigen erwartungstreuen Schätzer h und berechne\\ $h^*=E_\bullet(h|T)$
 \item Finde eine messbare Funktion f mit \[E_\vartheta(f\circ T)=g(\vartheta)\quad\forall\vartheta\in\theta\]
 \end{enumerate}
 
 \subsection{Beispiel}
 \label{11.10}
-Sei $\mc{P}=\brac{P_b^{\theta n}:P_b=\mc{U}_{(0,b)},b>0}$. Dann ist $T(x)=\max\limits_{1\leq i\leq n}x_i$ suffizient und vollständig.\\
+Sei $\mc{P}=\brac{P_b^\stuff:P_b=\mc{U}_{(0,b)},b>0}$. Dann ist $T(x)=\max\limits_{1\leq i\leq n}x_i$ suffizient und vollständig.\\
 \beweis
 Suffizienz analog zu \hyperref[10.16]{Beispiel 10.16}.\\
-Es gilt $P_b^{\theta n}(T\leq t)=P(X_1\leq t)^n=\brc{\dfrac{t}{n}}^b\quad\forall 0\leq t\leq b$\\
+Es gilt $P_b^\stuff(T\leq t)=P(x_1\leq t)^n=\brc{\dfrac{t}{n}}^b\quad\forall 0\leq t\leq b$\\
 Sei nun $b>0$ und $f$ so, dass $f\circ T\in\lp{1}(P_b)\quad\forall b$ und \\
-$0=E_b(f\circ T)=\intr f(t)d(P_b^{\theta n} XXX^T=\int\limits_0^bf(t)\dfrac{nt^{n-1}}{b^n}dt$\\Zerlege $f=f^+-f^-$ in Positiv- und Negativteil:\[
+$0=E_b(f\circ T)=\intr f(t)d(P_b^\stuff)^T=\int\limits_0^bf(t)\dfrac{nt^{n-1}}{b^n}dt$\\Zerlege $f=f^+-f^-$ in Positiv- und Negativteil:\[
 \int\limits_0^bf^+(t)t^{n-1}dt=\int\limits_0^bf^-(t)t^{n-1}dt\quad\forall b>0\]
-Betrachte die Maße $\mu^+$ und $\mu^-$ auf $B((0,\infty))$ mit $\mu^+(B)=\int\limits_Bf^+(t)t^{n-1}dt,\ \mu^-(B)=\int\limits_Bf^-(t)t^{n-1}dt,$
+Betrachte die Maße $\mu^+$ und $\mu^-$ auf $B((0,\infty))$ mit \\
+$\mu^+(B)=\int\limits_Bf^+(t)t^{n-1}dt,\ \mu^-(B)=\int\limits_Bf^-(t)t^{n-1}dt.$\\
 Mit dem Eindeutigkeitssatz für Maße gilt $\mu^+=\mu^-$ und beides sind $\sigma$-endliche Maße.\\
 Aus Radon-Nikodym (f.ü. Eindeutigkeit der Dichte) folgt \\
 $\dfrac{d\mu^+}{d\lambda}=\dfrac{d\mu^-}{d\lambda}\quad\lambda-\text{f.ü.}\\
-\Ra f^+=f^-\quad \lambda$-f.ü. $\Ra f=0\quad\lambda$-f.ü. und damit $(P_b^{\theta n})^T-f.s.\quad\forall b>0$.\\
+\Ra f^+=f^-\quad \lambda$-f.ü. $\Ra f=0\quad\lambda$-f.ü. und damit $(P_b^\stuff)^T-f.s.\quad\forall b>0$.\\
 Mit \hyperref[11.6]{Bemerkung 11.6 (i)} folgt die Behauptung.\QED
-$h(x)=\dfrac{n+1}{n}\max\limits_{1\leq i\leq n}x_i$ ist UMVUE, da \[E_\vartheta(h(x))=\dfrac{n+1}{n}\int\limits_0^bt\dfrac{nt^{n-1}}{b^n}dt?\dfrac{t^{n+1}}{b^n}\Bigg\vert_0^b=b\]\QED
+
+$h(x)=\dfrac{n+1}{n}\max\limits_{1\leq i\leq n}x_i$ ist UMVUE, da \[E_\vartheta(h(x))=\dfrac{n+1}{n}\int\limits_0^bt\dfrac{nt^{n-1}}{b^n}dt=\dfrac{t^{n+1}}{b^n}\Bigg\vert_0^b=b\]\QED
 
 Wir wenden uns nun wieder Exponentialfamilien zu, Sei \[
 \mc{P}=\brac{P_\vartheta:\vartheta\in\theta}\ll\mu\quad(\mu-\sigma-endlich)\]
 von der Form \[
 \dfrac{dP_\vartheta}{d\mu}(x)=C(\vartheta)\exp \brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)\]
 Dann heißt die Menge \[
-\Xi^*:=\brac{s\in\R^k:\int\limits_\Omega exp(\sm[k]{i=1}s_iT_i)hd\mu}\]
+\Xi^*:=\brac{s\in\R^k:\int\limits_\Omega exp\brc{\sm[k]{i=1}s_iT_i)}d\mu}\]
 \underline{natürlicher Parameterraum} der Exponentialfamilie.
 Offensichtlich gelten:\begin{list}{•}{}
 \item $\Xi:=\brac{(g_1(\vartheta),...,g_n(\vartheta)):\vartheta\in\theta}\subseteq\Xi^*$
-\item $\dfrac{dQ_s}{d\mu}:=\tilde{C}(s)\exp\brc{\sm[k]{i=1}s_iT_i(x)}h(x)$ definiert eine Exponentialfamilie $\brac{Q_s:s\in\Xi^*}$ in \underline{natürlicher Parametrisierung} (mit $\tilde{C}(s)=\dfrac{1}{\int\limits_\Omega\exp\brc{\sm[k]{i=1}s_iT_i(x)}h(x)\mu(dx)}$
+\item $\dfrac{dQ_s}{d\mu}:=\tilde{C}(s)\exp\brc{\sm[k]{i=1}s_iT_i(x)}h(x)$ definiert eine Exponentialfamilie $\brac{Q_s:s\in\Xi^*}$ in \underline{natürlicher Parametrisierung} mit \[\tilde{C}(s)=\dfrac{1}{\int\limits_\Omega\exp\brc{\sm[k]{i=1}s_iT_i(x)}h(x)\mu(dx)}\]
 \end{list} 
 
 \subsection{Lemma (Momente bei Exponentialfamilien)}
 \label{11.11}
 
-Sei $\raum$ SE mit $\mc{P}$ Exponentialfamilie in natürlicher Parametrisierung.
+Sei $\rraum$ SE mit $\mc{P}$ Exponentialfamilie in natürlicher Parametrisierung.
 \begin{enumerate}[label=(\alph*)]
-\item Ist $s\in\Xi^*$ so existieren unter $Q_s$ für $T_1,...,T_k$ Momente beliebiger Ordnung, d.h. $\forall (\mu_1,...,\mu_n)\in(\N_0)^k$
-\[\underbrace{\int\limits\Omega\prod\limits_{j=1}^kT_j^{\mu j}dQ_s}E_{Q_s}(T|...)=\tilde{C}(s)\dfrac{XX^{\mu_1+...+\mu_k}{xx_{s_1}^{\mu_1}x_{s_2}^{\mu_2}...x_{sk1}^{\mu_k}\int\limits\Omega e^{}}}{}\]
+\item Ist $s\in\Xi^*$ so existieren unter $Q_s$ für $T_1,...,T_k$ Momente beliebiger\\
+Ordnung, d.h. $\forall (\mu_1,...,\mu_n)\in(\N_0)^k$ gilt $\prod\limits_{j=1}^kT_j^{\mu_j}\in\lp{1}(Q_s)$ und
+\[\underbrace{\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu j}dQ_s}_{E_{Q_s}(T|...)}=\tilde{C}(s)\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial_{s_1}^{\mu_1}\partial_{s_2}^{\mu_2}...\partial_{s_k}^{\mu_k}}}\int\limits_\Omega e^{\langle s,T\rangle}hd\mu\]
+\item Ist $\varphi:\Omega\ra\R$ messbar und beschränkt, so gilt \begin{align}
+\dfrac{\partial}{\partial_{s_i}}E_{Q_s}(\varphi) & = E_{Q_s}(\varphi T_i)-E_{Q_s}(\varphi)E_{Q_S}(T_i)\\
+& = Cov_{Q_s}(\varphi,T_i)
+\end{align} 
+\item $\dfrac{\partial}{\partial_{s_i}}\tilde{C}(s)=-\tilde{C}(s)E_{Q_s}(T_i)$
 \end{enumerate}
 
-
+\iffalse
 \fi
 \end{document}
