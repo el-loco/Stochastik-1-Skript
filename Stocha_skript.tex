@@ -1821,14 +1821,131 @@ Sei $\rraum$ SE mit $\mc{P}$ Exponentialfamilie in natürlicher Parametrisierung
 \begin{enumerate}[label=(\alph*)]
 \item Ist $s\in\Xi^*$ so existieren unter $Q_s$ für $T_1,...,T_k$ Momente beliebiger\\
 Ordnung, d.h. $\forall (\mu_1,...,\mu_n)\in(\N_0)^k$ gilt $\prod\limits_{j=1}^kT_j^{\mu_j}\in\lp{1}(Q_s)$ und
-\[\underbrace{\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu j}dQ_s}_{E_{Q_s}(T|...)}=\tilde{C}(s)\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial_{s_1}^{\mu_1}\partial_{s_2}^{\mu_2}...\partial_{s_k}^{\mu_k}}}\int\limits_\Omega e^{\langle s,T\rangle}hd\mu\]
+\[\underbrace{\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu j}dQ_s}_{E_{Q_s}(T|...)}=\tilde{C}(s)\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial s_1^{\mu_1}\partial s_2^{\mu_2}...\partial s_k^{\mu_k}}}\int\limits_\Omega e^{\langle s,T\rangle}hd\mu\]
 \item Ist $\varphi:\Omega\ra\R$ messbar und beschränkt, so gilt \begin{align}
-\dfrac{\partial}{\partial_{s_i}}E_{Q_s}(\varphi) & = E_{Q_s}(\varphi T_i)-E_{Q_s}(\varphi)E_{Q_S}(T_i)\\
+\dfrac{\partial}{\partial s_i}E_{Q_s}(\varphi) & = E_{Q_s}(\varphi T_i)-E_{Q_s}(\varphi) E_{Q_s}(T_i)\\
 & = Cov_{Q_s}(\varphi,T_i)
 \end{align} 
 \item $\dfrac{\partial}{\partial_{s_i}}\tilde{C}(s)=-\tilde{C}(s)E_{Q_s}(T_i)$
 \end{enumerate}
+\beweis
+\marginpar{19.Vorlesung, 02.07.2018}
+\begin{enumerate}[label=(\alph*)]
+\item Mittels fourieranalytischer Methoden zeigt man, dass \[
+z\mapsto\int e^{\langle z,T\rangle} hd\mu=:\xi(z)\]
+beliebig oft differenzierbar ist und Integration und Differentiation vertauscht werden können.\\
 
+\underline{Intuition:} $hd\mu=dp$ Wahrscheinlichkeitsmaß und $P^T$ die Verteilung von T unter $P^T$ darstellt. Dann \[
+\int\limits_\omega e^{\langle z,T\rangle}P^T(dt)=\varphi_T(z)\quad z\in\C\]
+Momente bis zur Ordnung $\gamma$ existieren für $T_j$ falls\hfill(*)\\ $T\in\lp{\gamma}(P)$.\\
+\hyperref[4.14]{Satz 4.14} liefert $\gamma$-te Momente von T als Ableitung der charakteristischen Funktion.\\
+Nun ersetzt die bedingung $s\in\Xi^*$ in gewisser Weise Bedingung (*) und erlaubt wetergehend die Existenz aller Momente.
+
+$\tilde{C}(S))\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial s_1^{\mu_1}\partial s_2^{\mu_2}...\partial s_k^{\mu_k}}}\int\limits_\Omega e^{\underbrace{\langle s,T\rangle}_{\sm[k][{i=1}s_iT_i}}d\mu=\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu_j}\underbrace{e^{\langle s,T\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}$
+\item Es gilt $\tilde{C}(s)=\dfrac{1}{\xi(s)}\\
+\Ra\dfrac{\partial}{\partial s_i}\tilde{C}(s)=-\dfrac{1}{\beta (s)}\circ\dfrac{\partial}{\partial s_i}\beta(s)=-\dfrac{1}{\beta(s)}\circ\int\limits_\Omega T_ie^{\langle s,T\rangle}h(x)d\mu(x)\\
+=-\dfrac{1}{\beta(s)}\underbrace{\int\limits_\Omega T_i(x)\underbrace{e^{\langle s,T(x)\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}}_{E_{Q_s}(T_i)}$
+\item Setze $\tilde{\beta}(s)=\int\limits_\Omega e^{\langle s,T\rangle}\underbrace{h\varphi}_{\tilde{h}}d\mu$.\\
+Dann gilt \[
+E_{Q_s}(\varphi)=\int\limits_\Omega\varphi dQ_s=\int\limits_\Omega\varphi e^{\langle s,T\rangle}\tilde{C}(s)hd\mu=\tilde{C}(s)\tilde{\beta}(s)\]
+und damit\\
+$\dfrac{\partial}{\partial s_i} E_{Q_s}(\varphi)..........$
+\end{enumerate}
+
+
+\subsection{Definition}
+\label{11.12}
+Sei $\varphi$ ein Maß auf $\R^k$, dann heißt\[
+L_\varphi:y\mapsto\int\limits_{\R^k}e^{\langle y,x\rangle} d\varphi(x), \R^k\mapsto [0,\infty]\]
+die Laplacetransformierte oder momenterzeugende Funktion von $\varphi$. $I_\varphi:=\brac{y\in\R^k:L_\varphi(y)<\infty}$
+
+\subsection{Satz (Eindeutigkeitssatz)}
+\label{11.13}
+Seien $\varphi_1,\varphi_2$ Maße auf $\R^k$ und $\mc{U}\neq\emptyset$ offene Menge mit $\mc{U}\subset I_{\varphi_1}$ und $\mc{U}\subset I_{\varphi_2}.$ Gilt \[
+L_{\varphi_1}(y)=L_{\varphi_2}(y)\qf y\in\mc{U}\]
+so ist $\vartheta_1=\vartheta_2$. (Ähnlich dem Eindeutigkeitssatz für charakteristische Funktionen).\\
+\beweis
+Göttliche Eingebung
+
+\subsection{Satz}
+\label{11.14}
+Sei $\p$ eine Exponentialfamilie. Hat der Parameterraum $\Xi=\brac{(g_1(\varphi),...,g_k(\varphi)):\vartheta\in\theta}\subseteq\R^k$ nichtleeres Inneres, d.h. $\Xi\neq\emptyset$, dann ist $T=(T_1,...,T_k)$ vollständig für $\p$\\
+\beweis
+O.b.d.A. h=1 (sonst betrachte $h\mu$ statt $\mu$).\\
+Sei $f:\R^k\ra\R$ mit $f\circ T \in\lp{1}(P\vartheta)\qf\vartheta$ und \\
+$\int f\circ TdP\vartheta=0\qf\vartheta\in\theta\hfill(*)$\\
+z.z. nach \hyperref[11.6]{Bemerkung 11.6 (i)}: $f\circ T=0\quad P\vartheta-f.s.\qf\vartheta\\
+\xRightarrow{(*)}C(\vartheta)\int\limits_\Omega f\circ T\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i}d\mu=0\qf\vartheta\in\theta\hfill(**)$\\
+Setze $\mu^T=\mu\circ T^{-1}$\\
+Dann gilt für $(**)$\[
+C(\vartheta)\int\limits_{\R^k}f(t)\exp\brc{\sm[k]{i=1}g_i(\vartheta)t}d\mu^T=0\qf\vartheta\in\theta\hfill(***)
+\]
+Zerlege $f=f^++f^-$ und definiere Maße $\mu^-,\mu^+$ auf $\rbor[k]$ durch\[
+\dfrac{d\mu^{+/-}}{d\mu^T}=f{+/-}\]\[
+\int\limits_{\R^k}e^{\langle s,T\rangle} d\mu^+(t)=\int\limits_{\R^k}e^{\langle s,t\rangle}d\mu^-(t)\qf s\in\Xi.
+\]
+Mit \hyperref[11.13]{Satz 11.13} folgt $\mu^+=\mu^-\\
+\Ra f^+=f^-\quad\mu^T-$f.ü. (Eindeutigkeitssatz für Dichten)\\
+$\Ra f=0\quad\mu^T-$f.ü $\Ra f\circ T=0\mu-$f.ü.\\
+und damit $f\circ T=0\quad P\vartheta-f.s.\qf\vartheta\in\theta\\
+$\hyperref[11.6]{$\xRightarrow{Bem 11.6 i)}$}$ T=(T_1,...,T_k)$ ist vollständig für $\p$
+
+\subsection{Beispiel}
+\label{11.15}
+betrachte die Exponentialfamilien\\
+$\p_1=\brac{N(\mu,\sigma^2)^\stuff:\mu\in\R,\sigma^2>0}\\
+\p_2=\brac{N(\mu,\sigma^2)^\stuff:\mu\in\R,}$ mit $\sigma^2>0$ bekannt$\\
+\p_3=\brac{N(\mu,\sigma^2)^\stuff:\sigma^2>0}$ mit $\mu\in\R$ bekannt\\
+$\p_4=\brac{Poi(\lambda)^\stuff:\lambda>0}\\
+\p_5=\brac{Binom(1,p)^\stuff:p\in(0,1)}$
+\begin{enumerate}[label=(\roman*)]
+\item $T=\sumi x_i $ ist suffizient und vollständig für $P_i$ mit $i=\underbrace{2}_{\substack{vgl. 10.15.c)\\Vollst.vgl.ii}}\overbrace{4}^{\substack{einfach \\zu sehen}}\underbrace{5}_{11.7 b)}$\\
+Mit Lehmann-Scheffe ist dann \[
+h^*=\dfrac{1}{n}\sumi x_i=\overline{x}_n=\dfrac{1}{n}E\brc{\sumi x_i|\sigma(T)}=E(\overleftarrow{x}_n|\sigma(T))\]
+ist UMVU Schätzer für \[
+g(\varphi)=\int xdP\varphi(x)=E_\varphi(x_1)\]
+(UMVUE ist f.s. eindeutig)
+\item $T=\brc{\sumi x_i,\sumi x_i^2}$ ist suffizient für $\p_1$ (\hyperref{Bsp. 10.15 c)} und dort $\\
+\dfrac{dP_\varphi}{d\lambda^n}=C(\varphi)\exp\brc{\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\mu\sigma^2}\underbrace{\sumi x_i}_{T_1(x)}-\underbrace{\dfrac{1}{2\sigma^2}}_{g_2(\mu,\sigma^2}\underbrace{\sumi x_i^2}_{T_2(x)}}\\
+\Ra\Xi=\brac{(g_1,(\mu,\sigma^2),g_2(\mu,\sigma^2),g_2(\mu,\sigma^2)):\mu\in\R,\sigma^2>0}\\
+=\brac{(\dfrac{\mu}{\sigma^2},-\dfrac{1}{2\sigma^2}:\mu\in\R,\sigma^2>0}\\
+=\R x(-\infty,0)\neq\emptyset$\\
+also mit \hyperref[11.14]{Satz 11.14} gilt $T=\brc{\sumi x_i,\sumi x_i^2}$ vollständig für $\p_1$.\[
+\widehat{\mu}_n=\dfrac{1}{n}\sumi x_i, \widehat{\sigma}_n^2=\dfrac{1}{n-1}\sumi(x_i-n\widehat{\mu}_n)^2\] Beide erwartungstreu und mb bzgl $\sigma(T)$ .\\
+UMVUE für $g(\mu,\sigma^2)=(\mu,\sigma^2)$
+\item Für $\p_3$ ist.......
+\end{enumerate}
+
+
+
+
+
+\pagebreak
+Bisher: UMVUE für parametrische Familien. \\
+Nun: UMVUE für nichtparametrische Familien
+\section{U-Statistiken}
+\subsection{Definition}
+\label{12.1}
+Ein SE $\rraum$ heißt vollständig, falls $\f$ vollständig für $\p$ ist.\\
+Wir wissen, dass die Ordnungsstatistik\[
+Y=Y_n:\R^n\ra\R^n, (x_1,...,x_n)\mapsto(x_{(1)},...,x_{(n)})\] wobei $x_{(1)}\leq x_{(2)}\leq \cdots\leq x_{(n)}$ suffizient für beliebige Fammilien $\brac{P^\stuff:P\in\p},\p\subseteq \underbrace{M_1\rbor[]}_{\substack{(Menge aller W'Maße\\auf\rbor[])}}$\\
+von Produktmaßen ist. (vgl. \hyperref[10.1]{Bsp. 10.1 (ii)}\\
+Wann ist die Ordnungsstatistik auch vollständig?
+
+\subsection{Satz}
+\label{12.2}
+\begin{enumerate}[label=(\alph*)]
+\item Seien $(\Omega_i,\f_i,\p_i),i=1,\cdots,n$ vollständige SE und \[
+\tilde{P}:=\brac{\otimes\limits_{i=1}^nP_i:P_i\in\p_i,i=1,\cdots,n}\]
+Dann ist \[
+\brc{\prod\limits_{i=1}^n\Omega_i,\otimes\limits_{i=1}^n\f_i,\tilde{\p}\]
+vollständig.
+\item Sei $\p\subseteq M_1\rbor[]$ und $(\R,\mc{B}(\R),\p)$ sei vollständiges SE.\\
+Dann ist die Ordnungsstatistik $Y$ vollständig für \[
+\p^n=\brac{P^\stuff:P\in\p}\]
+falls $\p$ konvex ist.
+\end{enumerate}
 \iffalse
+Hallo
 \fi
 \end{document}
