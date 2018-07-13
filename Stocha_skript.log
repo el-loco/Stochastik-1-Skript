@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.20)  2 JUL 2018 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.20)  9 JUL 2018 16:19
 entering extended mode
 **./Stocha_skript.tex
 (Stocha_skript.tex
@@ -947,13 +947,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Non-PDF special ignored!
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3])
+[2] [3] [4])
 \tf@toc=\write5
 \openout5 = `Stocha_skript.toc'.
 
- [4]
+ [5]
 
-LaTeX Warning: Marginpar on page 5 moved.
+LaTeX Warning: Marginpar on page 6 moved.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
@@ -980,7 +980,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--178
 
  []
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 197--199
 
  []
@@ -990,7 +990,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
@@ -1005,7 +1005,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
  []
 
-[7] [8]
+[8] [9]
 
 LaTeX Warning: Command \glqq invalid in math mode on input line 251.
 
@@ -1024,7 +1024,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 287.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 287.
 
-[9]
+[10]
 
 LaTeX Warning: Command \" invalid in math mode on input line 289.
 
@@ -1036,23 +1036,23 @@ Underfull \hbox (badness 1297) in paragraph at lines 311--313
 r me-tri-scher Raum mit Me-trik
  []
 
-[10]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 1082) in paragraph at lines 394--395
 \T1/cmr/m/n/10 Sie $\OMS/cmsy/m/n/10 I$ \T1/cmr/m/n/10 ei-ne In-dex-men-ge. Ei-
 ne Fa-mi-lie $[][]$ von Zu-falls-va-ria-blen heiÿt
  []
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
@@ -1069,12 +1069,12 @@ n/10 Sei-en $\OML/cmm/m/it/10 v \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 k > \OT1/cm
 r/m/n/10 0$\T1/cmr/m/n/10 . Of-fen-sicht-lich gilt
  []
 
-[14] [15]
+[15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 490--491
 
  []
 
-<3_4.png, id=764, 464.4853pt x 166.37157pt>
+<3_4.png, id=808, 464.4853pt x 166.37157pt>
 File: 3_4.png Graphic file (type png)
  <use 3_4.png>
 Package pdftex.def Info: 3_4.png used on input line 494.
@@ -1084,7 +1084,7 @@ Overfull \hbox (5.13753pt too wide) in paragraph at lines 493--497
 [] 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 510--510
 []\T1/cmr/m/n/10 5.Vorlesung,
  []
@@ -1099,7 +1099,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
-[17 <./3_4.png>] [18]
+[18 <./3_4.png>] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
@@ -1112,7 +1112,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 572.
 
-<3_8.png, id=802, 1992.69469pt x 483.30562pt>
+<3_8.png, id=847, 1992.69469pt x 483.30562pt>
 File: 3_8.png Graphic file (type png)
  <use 3_8.png>
 Package pdftex.def Info: 3_8.png used on input line 582.
@@ -1129,7 +1129,7 @@ Underfull \hbox (badness 1009) in paragraph at lines 594--594
 /cmm/m/it/10 t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 !
  []
 
-[19 <./3_8.png>]
+[20 <./3_8.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 602--603
 
  []
@@ -1144,19 +1144,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 613--613
 []\T1/cmr/m/n/10 6.Vorlesung,
  []
 
-[20]
+[21]
 
-LaTeX Warning: Hyper reference `2.8' on page 21 undefined on input line 640.
+LaTeX Warning: Hyper reference `2.8' on page 22 undefined on input line 640.
 
 
-LaTeX Warning: Hyper reference `2.16' on page 21 undefined on input line 640.
+LaTeX Warning: Hyper reference `2.16' on page 22 undefined on input line 640.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
-[21]
+[22]
 Underfull \hbox (badness 1297) in paragraph at lines 689--703
 \T1/cmr/m/n/10 durch $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\O
 T1/cmr/m/n/10 ) = [] \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\
@@ -1165,7 +1165,7 @@ OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 und set-ze $\OML/cmm/m/it/10 G$ \T1/cmr/m/n/10
 n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) :=
  []
 
-[22] [23]
+[23] [24]
 Underfull \hbox (badness 10000) in paragraph at lines 725--725
 []\T1/cmr/m/n/10 7.Vorlesung,
  []
@@ -1175,29 +1175,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 747--748
 
  []
 
-[24] [25]
+[25] [26]
 Underfull \hbox (badness 10000) in paragraph at lines 817--826
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 859--859
 []\T1/cmr/m/n/10 8.Vorlesung,
  []
 
-[27]
+[28]
 LaTeX Font Info:    Try loading font information for U+mvs on input line 895.
- ("C:\Program Files\MiKTeX 2.92\tex\latex\marvosym\umvs.fd") [28] [29]
+ ("C:\Program Files\MiKTeX 2.92\tex\latex\marvosym\umvs.fd") [29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 931--932
 
  []
 
-[30] [31] [32]
+[31] [32] [33]
 Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 
  []
 
-[33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 1034--1035
 
  []
@@ -1207,7 +1207,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1035--1038
 
  []
 
-[34]
+[35]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1069--1069
 []\T1/cmr/m/n/10 10.Vorlesung,
  []
@@ -1224,17 +1224,17 @@ Overfull \hbox (40.44945pt too wide) detected at line 1083
 Var [] \OT1/cmr/m/n/10 = [] [] [] [] \OMS/cmsy/m/n/10 1$ 
  []
 
-[35] [36]
+[36] [37]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1141--1141
 []\T1/cmr/m/n/10 11.Vorlesung,
  []
 
-[37] [38]
+[38] [39]
 Underfull \hbox (badness 10000) in paragraph at lines 1214--1215
 
  []
 
-[39]
+[40]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1245--1245
 []\T1/cmr/m/n/10 12.Vorlesung,
  []
@@ -1244,12 +1244,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1248--1249
 
  []
 
-[40] [41] [42]
+[41] [42] [43]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1343--1343
 []\T1/cmr/m/n/10 13.Vorlesung,
  []
 
-[43]
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 1378--1381
 
  []
@@ -1302,7 +1302,7 @@ Underfull \hbox (badness 1478) in paragraph at lines 1411--1413
 iÿt
  []
 
-[44]
+[45]
 Underfull \hbox (badness 5147) in paragraph at lines 1413--1414
 []\T1/cmr/m/n/10 Ist $\OML/cmm/m/it/10  \OMS/cmsy/m/n/10  \U/msb/m/n/10 R[]$ 
 \T1/cmr/m/n/10 für ein $\OML/cmm/m/it/10 d \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N$\
@@ -1320,12 +1320,12 @@ Underfull \hbox (badness 4569) in paragraph at lines 1426--1427
 []$ \T1/cmr/m/n/10 für ein sta-tisch-ti-sches Funk-tio-
  []
 
-[45] [46]
+[46] [47]
 Underfull \hbox (badness 10000) in paragraph at lines 1510--1512
 
  []
 
-[47] [48]
+[48] [49]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1564--1564
 []\T1/cmr/m/n/10 16.Vorlesung,
  []
@@ -1335,12 +1335,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1569--1575
 
  []
 
-[49]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 1601--1605
 
  []
 
-[50] [51]
+[51] [52]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1651--1651
 []\T1/cmr/m/n/10 17.Vorlesung,
  []
@@ -1358,12 +1358,12 @@ po-nen-ti-al-fa-mi-lie. Aber $\OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 x\OT1/cmr/m/n/10 ) =
  []
 
-[52]
+[53]
 Underfull \hbox (badness 10000) in paragraph at lines 1679--1680
 []$ \T1/cmr/m/n/10 für g, falls
  []
 
-[53]
+[54]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1714.
@@ -1376,30 +1376,36 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1714.
 
-[54]
+[55]
 Overfull \hbox (1.4024pt too wide) in paragraph at lines 1759--1759
 []\T1/cmr/m/n/10 18.Vorlesung,
  []
 
-[55]
+[56]
 Underfull \hbox (badness 10000) in paragraph at lines 1778--1781
 
  []
 
-[56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1952
+[57] [58]
+Overfull \hbox (1.4024pt too wide) in paragraph at lines 1959--1959
+[]\T1/cmr/m/n/10 20.Vorlesung,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1969--1972
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1952.
-[58]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1952.
+[59] [60] [61]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2057.
+ [62]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2057.
  (Stocha_skript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1952.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1952.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2057.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2057.
 
 Package rerunfilecheck Info: File `Stocha_skript.out' has not changed.
-(rerunfilecheck)             Checksum: D2B18BEFCE7D9C531DD55C39A611F409;9028.
+(rerunfilecheck)             Checksum: CE9DD9C3DEAB5E59A49B04194C0C56A3;9538.
 
 
 LaTeX Warning: There were undefined references.
@@ -1407,13 +1413,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1952.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2057.
  ) 
 Here is how much of TeX's memory you used:
- 13531 strings out of 493323
- 191806 string characters out of 3138629
- 316214 words of memory out of 3000000
- 16433 multiletter control sequences out of 15000+200000
+ 13569 strings out of 493323
+ 192214 string characters out of 3138629
+ 316509 words of memory out of 3000000
+ 16448 multiletter control sequences out of 15000+200000
  18867 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,21n,45p,935b,594s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1446,9 +1452,9 @@ rvosym.pfb><C:/Program Files/MiKTeX 2.92/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb><C:/Program Files/MiKTeX 2.92/fonts/type1/public/amsfonts/symbols/msbm
 5.pfb><C:/Program Files/MiKTeX 2.92/fonts/type1/public/amsfonts/symbols/msbm7.p
 fb>
-Output written on Stocha_skript.pdf (58 pages, 2120343 bytes).
+Output written on Stocha_skript.pdf (62 pages, 2139960 bytes).
 PDF statistics:
- 1693 PDF objects out of 1728 (max. 8388607)
- 400 named destinations out of 1000 (max. 500000)
- 1035 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1770 PDF objects out of 2073 (max. 8388607)
+ 423 named destinations out of 1000 (max. 500000)
+ 1099 words of extra memory for PDF output out of 10000 (max. 10000000)
 

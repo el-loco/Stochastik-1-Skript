@@ -1187,7 +1187,7 @@ Die linearität der Erwartungswerte liefert die Behauptung.
 \end{enumerate}
 \item Seien $Z_1,Z_2$ Zufallsvariablen die i), ii) erfüllen. Dann gilt\\
 $B:=\brac{Z_1>Z_2}\in\g$\\
-$E)!_B(\underbrace{Z_1-Z_2}_{>0 auf B}))\xlongequal{ii)}E(1_B(X-X))=0\\
+$E(1_B(\underbrace{Z_1-Z_2}_{>0\text{ auf B}}))\xlongequal{ii)}E(1_B(X-X))=0\\
 \Ra P(B)=0$\\
 Analog zeigt man $P(\brac{Z_2>Z_1})=0\Ra P(Z_1=Z_2)=1$\QED
 \end{enumerate}
@@ -1428,7 +1428,7 @@ Sei $\raum$ SE und $D$ eine Menge (\underline{Entscheidungsraum}).\begin{enumera
 Bias_\vartheta(T)=:=E_\vartheta(T)-g(\vartheta)\]
 \underline{der Bias/die Verzerrung} von $T$ in $\vartheta$.\\
 Für (quadratintegrierbare) Schätzer heißt \[
-MSE_\vartheta(T):=E_\vartheta(\norm{T_g(\vartheta)}^2)\]
+MSE_\vartheta(T):=E_\vartheta(\norm{T-g(\vartheta)}^2)\]
 der \underline{mean-squared-error} von $T$ in $\vartheta$.
 \end{enumerate}
 
@@ -1587,7 +1587,7 @@ was von P unabhängig ist.\QED
 \label{10.9}
 Sei $(\Omega,\f,\p)$ SE, $\p\ll\mu,\ \mu\ \sigma$-endlich und $\tau\subseteq\f\ \sigma$-Algebra. Dann sind äquivalent:\begin{enumerate}[label=(\alph*)]
 \item $\tau$ ist $\p$-suffizient
-\item $\forall P\in\p\ \exists \tau$-messbare Funkion $f_P:\Omega\ra\R$ und eine von $P\in\p$ unabhängige $\f$-messbare Abbildung $h:\Omega\ra\R$ mit \[\dfrac{dP}{d\mu}=f_P\cdot\quad \mu-f.s.\]
+\item $\forall P\in\p\ \exists \tau$-messbare Funkion $f_P:\Omega\ra\R$ und eine von $P\in\p$ unabhängige $\f$-messbare Abbildung $h:\Omega\ra\R$ mit \[\dfrac{dP}{d\mu}=f_P\cdot h\quad \mu-f.s.\]
 \end{enumerate}
 
 \subsection{Korollar}
@@ -1761,7 +1761,7 @@ Sei $g:\mc{P}\ra\R$ erwartungstreu schätzbar und h ein erwartungstreuer Schätz
 \item Ist $\tau\subseteq\f$ suffizient und vollständig für $\mc{P}$, dann ist \[
 h^*:=E_\bullet(h|z)\]
 der (f.s. eindeutige) UMVUE für $g$.
-\item Ist $T:\Omega\ra\Omega'$ eine suffiziente und vollständige Statistik, dann ist $f^*\circ T$ mit $f^*(t)=E_\bullet(H|T=t)$ der (f.s. eindeutige) UMVUE für $g$.
+\item Ist $T:\Omega\ra\Omega'$ eine suffiziente und vollständige Statistik, dann ist $f^*\circ T$ mit $f^*(t)=E_\bullet(h|T=t)$ der (f.s. eindeutige) UMVUE für $g$.
 \end{enumerate}
 \beweis
 b) folgt offensichtlich aus a)\\
@@ -1947,6 +1947,111 @@ Dann ist die Ordnungsstatistik $Y$ vollständig für \[
 falls $\p$ konvex ist.
 \end{enumerate}
 
-Hallo
+
+
+
+
+
+
+
+
 \fi
+\marginpar{20.Vorlesung, 09.07.2018}
+\subsection{Satz (Basu)}
+\label{12.8}
+Sei $T:(\Omega,\f)\ra(\Omega',\f')$ suffizient und beschränkt vollständig für das SE $\rraum$ und $V:(\Omega,\f)\ra(\Omega'',\f'')$ eine Statistik mit \[
+P^V=Q\qf P\in\p\]
+für ein Wahrscheinlichkeitsmaß $Q$ auf $(\Omega'',\f'')$. Dann sind T und V P-stochastisch unabhängig $\forall P \in\p$\\
+\beweis 
+Sei $A\in\f''$. \[
+E_P(\underbrace{E_\bullet(1_A(V)|T)-Q(A)}_{=:f})=E_P(1_A(V))-Q(A)=P^V(A)-Q(A)=0\]
+Da f beschränkt ist, gilt $f=0\ P-f.s.$ d.h. \[
+Q(A)=E_\bullet(1_A(V)|T)\qf A\in\f''\]
+Sei nun $B\in\f'$. Dann gilt für $P\in\p\\
+P(V\in A,T\in B)=E_P(1_A(V)1_B(T)=E_P(E_P(1_A(V)1_B(T)|T))=E_P(1_B(T)E_\bullet(1_A(V)|T))=Q(A)P(T^{-1}(B))=P(V\in A)P(T\in B)$\\
+
+\subsection{Beispiel}
+\label{12.9}
+Für $\sigma^2>0$ fest sei $\p=\brac{N(\mu,\sigma^2)^\stuff:\mu\in\R}$.\\
+Dann ist $T=\dfrac{1}{n}\sumi X_i$ suffizient und vollständig für $\p$ und \[
+V=\dfrac{1}{n-1}\sumi (X_i-\overline{X}_n)^2\]
+hängt in der Verteilung nicht von $\mu$ ab.\\
+Folglich sind T und V unabhängig
+$\\\Ra$ Zähler und Nenner der t-Statistik $t_n=\dfrac{T}{V^{\dfrac{1}{2}}}$ sind unabhängig $\forall \mu\in\R$ und $\sigma^2>0$, falls $X_i$ iid mit $X_i\sim N(\mu,\sigma^2)$
+
+
+
+
+\section{Die Cramer-Rao-Ungleichung}
+Wenn wir suffiziente und vollständige Statistiken zur Verfügung haben, können wir gut UMVUE konstruieren. Was aber, wenn wir keine derartigen Statistiken finden  (vielleicht weil es gar keine gibt)?\\
+Wir leiten nun eine relativ allgemeine untere Schranke für die Varianz von Schätzern her. Erwartungstreue Schätzer, die dieses annehmen, sind dann automatisch UMVU.\\
+Wir nehmen dabei stets an:
+
+\subsection{Annahme}
+\label{13.1}
+$\rraum$ sei ein SE mit $\p=\brac{P_\vartheta:\vartheta\in\theta}\ll\mu$ für $\mu \sigma$-endlich, wobei $\theta\subseteq\R$ offen ist und für $f_\vartheta:=\dfrac{dP_\vartheta}{d\mu}$ gilt:\begin{list}{•}{}
+\item $\exists B\in\f$ Nullmenge, so dass $\dfrac{\partial}{\partial\vartheta}f_\vartheta(x)=:\dot f_\vartheta(x)$ existiert $\forall\vartheta\in\theta$ und $\forall x\in B^c$
+\item Die Menge \[A=\brac{f_\vartheta=0}\]
+hängt nicht von $\vartheta$ ab.
+\end{list}
+Wir betrachten $x\sim P_\vartheta, \vartheta\in\theta$ unbekannt und $T=T(x)$ sei ein Schätzer für das statistische Funktional $g:\theta\ra\R$. Es gelte $E_\vartheta|T|<\infty\qf\vartheta\in\theta$ und $b(\vartheta):=E_\vartheta(T)-g(T)$ sei der Bias von T.
+
+\subsection{Definition}
+\label{13.2}
+\begin{enumerate}[label=(\alph*)]
+\item \[\dot l_\vartheta(x)=\dfrac{\partial}{\partial\vartheta}log(f_\vartheta(x))=\dfrac{\dfrac{\partial}{\partial\vartheta}f_\vartheta(x)}{f_\vartheta(x)}\quad ,x\in B^c\]
+heißt \underline{Score-Funktion} (von $\p$ in $\vartheta$)\[I_\vartheta:=E_\vartheta(\dot l_\vartheta(x)^2)=\int\dot l_\vartheta^2dP_\vartheta, \vartheta\in\theta\]
+ist die \underline{Fisher-Information} (von $\p$ in $\vartheta$)
+\item Eine Abbildung $\underbrace{\vartheta}_{\in\theta}\mapsto\int hf_\vartheta d\mu$ mit $h:\Omega\ra\R$ messbar heißt \underline{differenzierbar unter dem Integral}, falls \\
+$\dfrac{\partial}{\partial}$
+ASDASDASDASD
+gilt und existiert.
+Analog definiert man k-fach differenzierbar unter dem Integral für $k\in\N$.
+\end{enumerate}
+
+\subsection{Satz}
+\label{13.3}
+Angenommen \begin{enumerate}[label=(\roman*)]
+\item $I_\vartheta>0$
+\item $\int f_\vartheta d\mu, \int Tf_\vartheta d\mu$ sind unter dem Integral differenzierbar
+\item $\vartheta\mapsto g(\vartheta)$ ist differenzierbar mit \\
+$\dfrac{\partial}{\partial\vartheta}g(\vartheta)=:\dot g(\vartheta).$
+\end{enumerate}
+Dann gelten\begin{enumerate}[label=(\alph*)]
+\item $Var_\vartheta(T)\geq\dfrac{(\dot g(\vartheta)+\dot b(\vartheta))^2}{I_\vartheta}$
+\item $Var_\vartheta(T)\geq \dfrac{\dot g(\vartheta)^2}{I_\vartheta}$ falls T erwartungstreu ist.
+\item In a) und b) gilt \glqq $=$ \grqq$\LRa \cdot l_\vartheta=A(\vartheta)(T-E_\vartheta(T))\quad\mu-$f.ü. mit einer Funktion A
+\item Ist $\vartheta\mapsto\int f_\vartheta d\mu$ 2-fach differenzierbar unter dem Integral, so gilt:\[
+I_\vartheta=-E_\vartheta\brc{\dfrac{\partial^2}{\partial\vartheta^2}log(f_\vartheta)}\]
+\end{enumerate}
+\beweis
+$g(\vartheta)+b(\vartheta)=\int Tf_\vartheta d\mu=\int\limits_{B^c}Tf_\vartheta(d\mu)\\
+\Ra \dot{g}(\vartheta)+\dot b(\vartheta)=\int\limits_{A^c\cap B^c}T\underbrace{\dfrac{\partial}{\partial\vartheta}f_\vartheta}_{\dfrac{\dot f_\vartheta}{f_\vartheta}f\vartheta}=\int\limits_{A^c\cap B^c} T\dot l_\vartheta \underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
+=E_\vartheta(T\dot l_\vartheta)=Cov_\vartheta(T,\dot l_\vartheta)\hfill (*)$\\
+da $1=\int f_\vartheta d\mu$ und damit $0=\int\dfrac{\partial}{\partial\vartheta}f_\vartheta d\mu=E_\vartheta(\dot l_\vartheta)$.\\
+Aus $(*)$ und der CSU folgt:\[
+\brc{\dot g(\vartheta)+\dot b(\vartheta)}^2=\brc{Cov_\vartheta(T,\dot l_\vartheta)}^2\leq Var_\vartheta(T)\cdot I_\vartheta\]
+Es folgen a) und b) mit \glqq $=$ \grqq genau dann, wenn $\dot l_\vartheta\in sp\brac{E_\vartheta(T)}\qf \vartheta$, dies zeigt c).\\
+Ad d)\\
+$E_\vartheta(\dot l_\vartheta)=\int \dot l_\vartheta f_\vartheta d\mu=0=\int\dfrac{\partial}{\partial\vartheta}f_\vartheta d\mu\\
+\Ra 0=\int\dfrac{\partial^2}{\partial\vartheta^2}d_\vartheta d\mu\xlongequal[regel]{Produkt-}\int\ddot l_\vartheta f_\vartheta d\mu+\int \brc{\dot l_\vartheta}^2\underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
+=\int\ddot l_\vartheta f_\vartheta d\mu+I_\vartheta\\
+\Ra I_\vartheta=-E_\vartheta(\ddot l_\vartheta)$\QED
+
+\subsection{Bemerkung}
+\label{13.4}
+\begin{enumerate}[label=(\roman*)]
+\item Die rechten Seiten der Ungleichungen in a) und b) heißen auch Informaionsschranken
+\item Die Craner-Rao-Ungleichung lässt sich auch unter weicheren Voraussetzungen beweisen (\grqq$\lp{1}$-Differenzierbarkeit\grqq)
+\end{enumerate}
+
+\subsection{Beispiel}
+\label{13.5}
+Sei $\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)e^{\vartheta T}\cdot h,\ \vartheta\in\theta\subseteq\R$ offen.\\
+Nach \hyperref[11.11]{Lemma 11.11 c)} gilt\[
+\dfrac{d}{d\vartheta}C(\vartheta)=-C(\vartheta)E_\vartheta(T)\]
+$\Ra \dot l_\vartheta=\dfrac{\partial}{\partial\vartheta}log(f_\vartheta)=\dfrac{-C(\vartheta)E_\vartheta(T)e^{\vartheta T}h+C(\vartheta)Te^{\vartheta T}h}{C(\vartheta)e^{\vartheta T}h}=T-E_\vartheta(t)\\
+\Ra I_\vartheta=Var_\vartheta(T)$\\
+Mit Satz 13.3 d) gilt Gleichheit bei den Cramer-Rao-Schranken.
+%\fi
 \end{document}
