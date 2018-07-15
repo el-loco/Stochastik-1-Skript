@@ -126,11 +126,30 @@
 \BOOKMARK [2][-]{subsection.11.9}{Beispiel}{section.11}% 126
 \BOOKMARK [2][-]{subsection.11.10}{Beispiel}{section.11}% 127
 \BOOKMARK [2][-]{subsection.11.11}{Lemma \(Momente bei Exponentialfamilien\)}{section.11}% 128
-\BOOKMARK [2][-]{subsection.11.12}{Satz \(Basu\)}{section.11}% 129
-\BOOKMARK [2][-]{subsection.11.13}{Beispiel}{section.11}% 130
-\BOOKMARK [1][-]{section.12}{Die Cramer-Rao-Ungleichung}{part.1}% 131
-\BOOKMARK [2][-]{subsection.12.1}{Annahme}{section.12}% 132
-\BOOKMARK [2][-]{subsection.12.2}{Definition}{section.12}% 133
-\BOOKMARK [2][-]{subsection.12.3}{Satz}{section.12}% 134
-\BOOKMARK [2][-]{subsection.12.4}{Bemerkung}{section.12}% 135
-\BOOKMARK [2][-]{subsection.12.5}{Beispiel}{section.12}% 136
+\BOOKMARK [2][-]{subsection.11.12}{Definition}{section.11}% 129
+\BOOKMARK [2][-]{subsection.11.13}{Satz \(Eindeutigkeitssatz\)}{section.11}% 130
+\BOOKMARK [2][-]{subsection.11.14}{Satz}{section.11}% 131
+\BOOKMARK [2][-]{subsection.11.15}{Beispiel}{section.11}% 132
+\BOOKMARK [1][-]{section.12}{U-Statistiken}{part.1}% 133
+\BOOKMARK [2][-]{subsection.12.1}{Definition}{section.12}% 134
+\BOOKMARK [2][-]{subsection.12.2}{Satz}{section.12}% 135
+\BOOKMARK [2][-]{subsection.12.3}{Beispiel}{section.12}% 136
+\BOOKMARK [2][-]{subsection.12.4}{Definition}{section.12}% 137
+\BOOKMARK [2][-]{subsection.12.5}{Lemma}{section.12}% 138
+\BOOKMARK [2][-]{subsection.12.6}{Definition und Satz}{section.12}% 139
+\BOOKMARK [2][-]{subsection.12.7}{Beispiel}{section.12}% 140
+\BOOKMARK [2][-]{subsection.12.8}{Satz \(Basu\)}{section.12}% 141
+\BOOKMARK [2][-]{subsection.12.9}{Beispiel}{section.12}% 142
+\BOOKMARK [1][-]{section.13}{Die Cramer-Rao-Ungleichung}{part.1}% 143
+\BOOKMARK [2][-]{subsection.13.1}{Annahme}{section.13}% 144
+\BOOKMARK [2][-]{subsection.13.2}{Definition}{section.13}% 145
+\BOOKMARK [2][-]{subsection.13.3}{Satz}{section.13}% 146
+\BOOKMARK [2][-]{subsection.13.4}{Bemerkung}{section.13}% 147
+\BOOKMARK [2][-]{subsection.13.5}{Beispiel \(Exponentialfamilie\)}{section.13}% 148
+\BOOKMARK [1][-]{section.14}{Bayer-Sch\344tzer}{part.1}% 149
+\BOOKMARK [2][-]{subsection.14.1}{Definition}{section.14}% 150
+\BOOKMARK [2][-]{subsection.14.2}{Modell}{section.14}% 151
+\BOOKMARK [2][-]{subsection.14.3}{Bemerkung}{section.14}% 152
+\BOOKMARK [2][-]{subsection.14.4}{Satz}{section.14}% 153
+\BOOKMARK [2][-]{subsection.14.5}{Beispiel}{section.14}% 154
+\BOOKMARK [1][-]{section.15}{Lineare Regression}{part.1}% 155

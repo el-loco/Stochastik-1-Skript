@@ -114,9 +114,12 @@
 \newcommand{\f}{\mc{F}}
 \newcommand{\p}{\mc{P}}
 \newcommand{\h}{\mc{H}}
+\newcommand{\uu}{\mc{U}}
 \newcommand{\sumi}{\sm[n]{i=1}}
 \newcommand{\qf}{\quad\forall}
 \newcommand{\stuff}{{\otimes n}}
+\DeclareMathOperator*{\kreuz}{\otimes}
+\newcommand{\kreuzi}{\kreuz\limits_{i=1}^n}
 % ==============================================
 % Start des eigentlichen Dokumentes
 % ==============================================
@@ -1829,65 +1832,67 @@ Ordnung, d.h. $\forall (\mu_1,...,\mu_n)\in(\N_0)^k$ gilt $\prod\limits_{j=1}^kT
 \item $\dfrac{\partial}{\partial_{s_i}}\tilde{C}(s)=-\tilde{C}(s)E_{Q_s}(T_i)$
 \end{enumerate}
 \beweis
-\iffalse
 \marginpar{19.Vorlesung, 02.07.2018}
 \begin{enumerate}[label=(\alph*)]
 \item Mittels fourieranalytischer Methoden zeigt man, dass \[
-z\mapsto\int e^{\langle z,T\rangle} hd\mu=:\xi(z)\]
+z\mapsto\int e^{\langle z,T\rangle} hd\mu=:\beta(z)\]
 beliebig oft differenzierbar ist und Integration und Differentiation vertauscht werden können.\\
 
-\underline{Intuition:} $hd\mu=dp$ Wahrscheinlichkeitsmaß und $P^T$ die Verteilung von T unter $P^T$ darstellt. Dann \[
-\int\limits_\omega e^{\langle z,T\rangle}P^T(dt)=\varphi_T(z)\quad z\in\C\]
-Momente bis zur Ordnung $\gamma$ existieren für $T_j$ falls\hfill(*)\\ $T\in\lp{\gamma}(P)$.\\
+\underline{Intuition:} Sei $hd\mu=dP$ Wahrscheinlichkeitsmaß und es stelle $P^T$ die Verteilung von T unter $P^T$ dar. Dann \[
+\int\limits_\Omega e^{\langle z,T\rangle}P^T(dt)=\varphi_T(z)\quad z\in\C\]
+Momente bis zur Ordnung $\gamma$ existieren für $T_j$ falls $T\in\lp{\gamma}(P)$.\hfill(*)\\
 \hyperref[4.14]{Satz 4.14} liefert $\gamma$-te Momente von T als Ableitung der charakteristischen Funktion.\\
-Nun ersetzt die bedingung $s\in\Xi^*$ in gewisser Weise Bedingung (*) und erlaubt wetergehend die Existenz aller Momente.
+Nun ersetzt die Bedingung $s\in\Xi^*$ in gewisser Weise Bedingung (*) und erlaubt wetergehend die Existenz aller Momente.
 
-$\tilde{C}(S))\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial s_1^{\mu_1}\partial s_2^{\mu_2}...\partial s_k^{\mu_k}}}\int\limits_\Omega e^{\underbrace{\langle s,T\rangle}_{\sm[k][{i=1}s_iT_i}}d\mu=\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu_j}\underbrace{e^{\langle s,T\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}$
-\item Es gilt $\tilde{C}(s)=\dfrac{1}{\xi(s)}\\
-\Ra\dfrac{\partial}{\partial s_i}\tilde{C}(s)=-\dfrac{1}{\beta (s)}\circ\dfrac{\partial}{\partial s_i}\beta(s)=-\dfrac{1}{\beta(s)}\circ\int\limits_\Omega T_ie^{\langle s,T\rangle}h(x)d\mu(x)\\
-=-\dfrac{1}{\beta(s)}\underbrace{\int\limits_\Omega T_i(x)\underbrace{e^{\langle s,T(x)\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}}_{E_{Q_s}(T_i)}$
+$\tilde{C}(S)\dfrac{\partial^{\mu_1+...+\mu_k}}{{\partial s_1^{\mu_1}\partial s_2^{\mu_2}...\partial s_k^{\mu_k}}}\int\limits_\Omega e^{\overbrace{\langle s,T\rangle}^{\sm[k]{i=1}s_iT_i}}d\mu=\int\limits_\Omega\prod\limits_{j=1}^kT_j^{\mu_j}\underbrace{e^{\langle s,T\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}$
 \item Setze $\tilde{\beta}(s)=\int\limits_\Omega e^{\langle s,T\rangle}\underbrace{h\varphi}_{\tilde{h}}d\mu$.\\
 Dann gilt \[
 E_{Q_s}(\varphi)=\int\limits_\Omega\varphi dQ_s=\int\limits_\Omega\varphi e^{\langle s,T\rangle}\tilde{C}(s)hd\mu=\tilde{C}(s)\tilde{\beta}(s)\]
 und damit\\
-$\dfrac{\partial}{\partial s_i} E_{Q_s}(\varphi)..........$
+$\dfrac{\partial}{\partial s_i} E_{Q_s}(\varphi)=\tilde{C}(s)\dfrac{\partial}{\partial s_i}\tilde\beta(s)+\tilde\beta(s)\dfrac{\partial}{\partial s_i}\tilde C(s)\\
+\xlongequal{a),c)}\underbrace{\tilde{C}(s)\int\limits_\Omega T_ie^{\langle s,T\rangle}\varphi hd\mu}_{E_{Q_s}(\varphi T_i}-\underbrace{\tilde\beta(s)\tilde C(s)}_{E_{Q_s}(\varphi)}E_{Q_s}(T_i)$
+\item Es gilt $\tilde{C}(s)=\dfrac{1}{\beta(s)}\\
+\Ra\dfrac{\partial}{\partial s_i}\tilde{C}(s)=-\dfrac{1}{\beta (s)^2}\dfrac{\partial}{\partial s_i}\beta(s)=-\dfrac{1}{\beta(s)^2}\int\limits_\Omega T_ie^{\langle s,T\rangle}h(x)d\mu(x)\\
+=-\dfrac{1}{\beta(s)}\underbrace{\int\limits_\Omega T_i(x)\underbrace{e^{\langle s,T(x)\rangle}\tilde{C}(s)h(x)d\mu(x)}_{dQs}}_{E_{Q_s}(T_i)}$\QED
+
 \end{enumerate}
 
 
 \subsection{Definition}
 \label{11.12}
-Sei $\varphi$ ein Maß auf $\R^k$, dann heißt\[
-L_\varphi:y\mapsto\int\limits_{\R^k}e^{\langle y,x\rangle} d\varphi(x), \R^k\mapsto [0,\infty]\]
-die Laplacetransformierte oder momenterzeugende Funktion von $\varphi$. $I_\varphi:=\brac{y\in\R^k:L_\varphi(y)<\infty}$
+Sei $\vartheta$ ein Maß auf $\R^k$, dann heißt\[
+L_\vartheta:y\mapsto\int\limits_{\R^k}e^{\langle y,x\rangle} d\vartheta(x), \R^k\ra [0,\infty]\]
+die \underline{Laplacetransformierte} oder \underline{momenterzeugende Funktion} von $\vartheta$. $I_\vartheta:=\brac{y\in\R^k:L_\vartheta(y)<\infty}$
 
 \subsection{Satz (Eindeutigkeitssatz)}
 \label{11.13}
-Seien $\varphi_1,\varphi_2$ Maße auf $\R^k$ und $\mc{U}\neq\emptyset$ offene Menge mit $\mc{U}\subset I_{\varphi_1}$ und $\mc{U}\subset I_{\varphi_2}.$ Gilt \[
-L_{\varphi_1}(y)=L_{\varphi_2}(y)\qf y\in\mc{U}\]
+Seien $\vartheta_1,\vartheta_2$ Maße auf $\R^k$ und $\mc{U}\neq\emptyset$ offene Menge mit $\mc{U}\subset I_{\vartheta_1}$ und $\mc{U}\subset I_{\vartheta_2}.$ Gilt \[
+L_{\vartheta_1}(y)=L_{\vartheta_2}(y)\qf y\in\mc{U}\]
 so ist $\vartheta_1=\vartheta_2$. (Ähnlich dem Eindeutigkeitssatz für charakteristische Funktionen).\\
 \beweis
 Göttliche Eingebung
 
 \subsection{Satz}
 \label{11.14}
-Sei $\p$ eine Exponentialfamilie. Hat der Parameterraum $\Xi=\brac{(g_1(\varphi),...,g_k(\varphi)):\vartheta\in\theta}\subseteq\R^k$ nichtleeres Inneres, d.h. $\Xi\neq\emptyset$, dann ist $T=(T_1,...,T_k)$ vollständig für $\p$\\
+Sei $\p$ eine Exponentialfamilie. Hat der Parameterraum \\
+$\Xi=\brac{(g_1(\vartheta),...,g_k(\vartheta)):\vartheta\in\theta}\subseteq\R^k$ nichtleeres Inneres, d.h. $\Xi\neq\emptyset$, dann ist $T=(T_1,...,T_k)$ vollständig für $\p$\\
 \beweis
 O.b.d.A. h=1 (sonst betrachte $h\mu$ statt $\mu$).\\
 Sei $f:\R^k\ra\R$ mit $f\circ T \in\lp{1}(P\vartheta)\qf\vartheta$ und \\
 $\int f\circ TdP\vartheta=0\qf\vartheta\in\theta\hfill(*)$\\
-z.z. nach \hyperref[11.6]{Bemerkung 11.6 (i)}: $f\circ T=0\quad P\vartheta-f.s.\qf\vartheta\\
+z.z. nach \hyperref[11.6]{Bemerkung 11.6 (i)}: $f\circ T=0\quad P\vartheta-f.s.\qf\vartheta\in\Theta\\
 \xRightarrow{(*)}C(\vartheta)\int\limits_\Omega f\circ T\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i}d\mu=0\qf\vartheta\in\theta\hfill(**)$\\
 Setze $\mu^T=\mu\circ T^{-1}$\\
 Dann gilt für $(**)$\[
 C(\vartheta)\int\limits_{\R^k}f(t)\exp\brc{\sm[k]{i=1}g_i(\vartheta)t}d\mu^T=0\qf\vartheta\in\theta\hfill(***)
 \]
 Zerlege $f=f^++f^-$ und definiere Maße $\mu^-,\mu^+$ auf $\rbor[k]$ durch\[
-\dfrac{d\mu^{+/-}}{d\mu^T}=f{+/-}\]\[
+\dfrac{d\mu^{\pm}}{d\mu^T}=f^{\pm}\]\[
 \int\limits_{\R^k}e^{\langle s,T\rangle} d\mu^+(t)=\int\limits_{\R^k}e^{\langle s,t\rangle}d\mu^-(t)\qf s\in\Xi.
 \]
 Mit \hyperref[11.13]{Satz 11.13} folgt $\mu^+=\mu^-\\
 \Ra f^+=f^-\quad\mu^T-$f.ü. (Eindeutigkeitssatz für Dichten)\\
-$\Ra f=0\quad\mu^T-$f.ü $\Ra f\circ T=0\mu-$f.ü.\\
+$\Ra f=0\quad\mu^T-$f.ü $\Ra f\circ T=0\quad\mu-$f.ü.\\
 und damit $f\circ T=0\quad P\vartheta-f.s.\qf\vartheta\in\theta\\
 $\hyperref[11.6]{$\xRightarrow{Bem 11.6 i)}$}$ T=(T_1,...,T_k)$ ist vollständig für $\p$
 
@@ -1900,21 +1905,23 @@ $\p_1=\brac{N(\mu,\sigma^2)^\stuff:\mu\in\R,\sigma^2>0}\\
 $\p_4=\brac{Poi(\lambda)^\stuff:\lambda>0}\\
 \p_5=\brac{Binom(1,p)^\stuff:p\in(0,1)}$
 \begin{enumerate}[label=(\roman*)]
-\item $T=\sumi x_i $ ist suffizient und vollständig für $P_i$ mit $i=\underbrace{2}_{\substack{vgl. 10.15.c)\\Vollst.vgl.ii}}\overbrace{4}^{\substack{einfach \\zu sehen}}\underbrace{5}_{11.7 b)}$\\
-Mit Lehmann-Scheffe ist dann \[
-h^*=\dfrac{1}{n}\sumi x_i=\overline{x}_n=\dfrac{1}{n}E\brc{\sumi x_i|\sigma(T)}=E(\overleftarrow{x}_n|\sigma(T))\]
+\item $T=\sumi x_i $ ist suffizient und vollständig für $P_i$ mit \\
+$i=\underbrace{2}_{\substack{\hyperref[10.15]{vgl. 10.15.c)}\\Vollst.vgl.ii}}\overbrace{4}^{\substack{einfach \\zu sehen}}\underbrace{5}_{\hyperref[11.7]{11.7 b)}}$\\
+Mit Lehmann-Scheffe gilt dann \[
+h^*=\dfrac{1}{n}\sumi x_i=\overline{x}_n=\dfrac{1}{n}E\brc{\sumi x_i|\sigma(T)}=E(\overline{x}_n|\sigma(T))\]
 ist UMVU Schätzer für \[
-g(\varphi)=\int xdP\varphi(x)=E_\varphi(x_1)\]
+g(\vartheta)=\int xdP\vartheta(x)=E_\vartheta(x_1)\]
 (UMVUE ist f.s. eindeutig)
-\item $T=\brc{\sumi x_i,\sumi x_i^2}$ ist suffizient für $\p_1$ (\hyperref{Bsp. 10.15 c)} und dort $\\
-\dfrac{dP_\varphi}{d\lambda^n}=C(\varphi)\exp\brc{\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\mu\sigma^2}\underbrace{\sumi x_i}_{T_1(x)}-\underbrace{\dfrac{1}{2\sigma^2}}_{g_2(\mu,\sigma^2}\underbrace{\sumi x_i^2}_{T_2(x)}}\\
-\Ra\Xi=\brac{(g_1,(\mu,\sigma^2),g_2(\mu,\sigma^2),g_2(\mu,\sigma^2)):\mu\in\R,\sigma^2>0}\\
-=\brac{(\dfrac{\mu}{\sigma^2},-\dfrac{1}{2\sigma^2}:\mu\in\R,\sigma^2>0}\\
+
+\item $T=\brc{\sumi x_i,\sumi x_i^2}$ ist suffizient für $\p_1$ (\hyperref[10.15]{Bsp. 10.15 c)} und dort $\\
+\dfrac{dP_\vartheta}{d\lambda^n}=C(\vartheta)\exp\brc{\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\mu\sigma^2)}\underbrace{\sumi x_i}_{T_1(x)}-\underbrace{\dfrac{1}{2\sigma^2}}_{g_2(\mu,\sigma^2)}\underbrace{\sumi x_i^2}_{T_2(x)}}\\
+\Ra\Xi=\brac{(g_1,(\mu,\sigma^2),g_2(\mu,\sigma^2)):\mu\in\R,\sigma^2>0}\\
+=\brac{\brc{\dfrac{\mu}{\sigma^2},-\dfrac{1}{2\sigma^2}}:\mu\in\R,\sigma^2>0}\\
 =\R x(-\infty,0)\neq\emptyset$\\
 also mit \hyperref[11.14]{Satz 11.14} gilt $T=\brc{\sumi x_i,\sumi x_i^2}$ vollständig für $\p_1$.\[
-\widehat{\mu}_n=\dfrac{1}{n}\sumi x_i, \widehat{\sigma}_n^2=\dfrac{1}{n-1}\sumi(x_i-n\widehat{\mu}_n)^2\] Beide erwartungstreu und mb bzgl $\sigma(T)$ .\\
+\widehat{\mu}_n=\dfrac{1}{n}\sumi x_i,\quad \widehat{\sigma}_n^2=\dfrac{1}{n-1}\sumi(x_i-n\widehat{\mu}_n)^2\] Beide erwartungstreu und mb bzgl $\sigma(T)$ .\\
 UMVUE für $g(\mu,\sigma^2)=(\mu,\sigma^2)$
-\item Für $\p_3$ ist.......
+\item Für $\p_3$ ist $\sumi (x_i-\mu)^2$ suffizient und Vollständig. Mit Lehman-Scheffe ist \[\dfrac{1}{n}\sumi(x_i-\mu)^2\] UMVUE für $\sigma^2$.\QED
 \end{enumerate}
 
 
@@ -1937,51 +1944,149 @@ Wann ist die Ordnungsstatistik auch vollständig?
 \label{12.2}
 \begin{enumerate}[label=(\alph*)]
 \item Seien $(\Omega_i,\f_i,\p_i),i=1,\cdots,n$ vollständige SE und \[
-\tilde{P}:=\brac{\otimes\limits_{i=1}^nP_i:P_i\in\p_i,i=1,\cdots,n}\]
+\tilde{P}:=\brac{\kreuz\limits_{i=1}^nP_i:P_i\in\p_i,i=1,\cdots,n}\]
 Dann ist \[
-\brc{\prod\limits_{i=1}^n\Omega_i,\otimes\limits_{i=1}^n\f_i,\tilde{\p}\]
+\brc{\prod\limits_{i=1}^n\Omega_i,\kreuz\limits_{i=1}^n\f_i,\tilde{\p}}\]
 vollständig.
-\item Sei $\p\subseteq M_1\rbor[]$ und $(\R,\mc{B}(\R),\p)$ sei vollständiges SE.\\
+\item Sei $\p\subseteq M_1\rbor[]$ und $(\R,\mc{B}(\R),\p)$ ein vollständiges SE.\\
 Dann ist die Ordnungsstatistik $Y$ vollständig für \[
 \p^n=\brac{P^\stuff:P\in\p}\]
 falls $\p$ konvex ist.
 \end{enumerate}
+\marginpar{20.Vorlesung, 05.08.2018}
+\beweis
+\begin{enumerate}[label=(\alph*)]
+\item Sei $f:\prod\limits_{i=1}^n\Omega_i\ra\R$ messbar (bzgl. $\kreuz\limits_{i=1}^n\f_i$) und integrierbar mit \[\int fd\kreuz\limits_{i=1}^nP_i=0\qf P_i\in\p_i\hfill (*(\]
+zz: $f=0$ f.s.\\
+Wir zeigen zunächst\[\int f 1_{A_1\times...\times A_n}d\kreuzi P_i=0\qf A_i\in\f_i(\forall P_i\in\p_i)\hfill(**)\]
+Dies folgt mit Fubini und der Vollständigkeit der Einzelelemente:$\\
+0\xlongequal{(*)}=\int\brc{\int...\int f(x_1,...,x_n)dP_2(x_2)...dP_n(x_n)}dP_1(x_1)\\
+\xRightarrow{P_1 vollst.}g=0\quad P_1-f.s.\Ra g1_{A_1}=0\quad P_1-f.s.\qf P_1\in\p_1$ und alle $A_1\in\f_1$. Induktiv folgt so $(**)$.\\
+Da $\brac{A_1\times...\times A_n:A_i\in\f_i}\quad\cap$-stabiler Erzeuger von $\kreuzi\f_i$ ist, folgt somit mit $f=f^++f^-$ aus $(**)$\[
+\int f^+1_{A_1\times...\times A_n}d\kreuzi P_i=\int f^-1_{A_1\times...\times A_n}d\kreuzi P_i\]
+also  mit $\mu^-=f^-\kreuzi P_i$ und $\mu^+=f^+\kreuzi P_i$ dann gilt auf dem obigen $\cap$-stabilen Erzeuger: $\mu^-=\mu^+$ und somit auch auf $\kreuzi\f_i$ (Eindeutigkeitssatz für Maße)\\
+$\Ra \int f1_Ad\kreuzi P_i=0\qf A\in\kreuzi\f_i\forall P_i\in\p_i$\\
+Setze nun $A=\brac{f>0},\brac{f<0}$, dann folgt $f=0$ f.s. und somit die Beehauptung nach \hyperref[1.5]{Definition 11.5}.
 
+\item Sei $f:\R^n\ra\R^n$ messbar mit \[
+\int f\circ YdP^n=0\qf P\in\p\]
+Es gilt, da $\p$ konvex\\
+$\sumi \alpha_iP_i\in\p_i\qf0\leq\alpha_i\leq 1,\sumi \alpha_i=1m P_i\in\p_i$\\
+(Hier $\p_i=\p\forall i=1,...,n$, also $(\Omega_i,\f_i,\p_i)=(\R,B(\R),\p)$ nach Voraussetzung vollständig)\\
+Somit gilt\[0=\int f\circ Yd\brc{\sumi \alpha_iP_i}^n=\sum\limits_{i_1=1}^n...\sum\limits_{i_n=1}^n\alpha_{i_1}...\alpha_{i_n}\int f\circ Yd\kreuz\limits_{j=1}^n P_{i_j}\hfill(***)\]
+Insbesondere gilt $(***)\forall(\alpha_1,...,\alpha_n)\in[0,\infty)^n$ (normiere mit $\sumi \alpha_i$).\\
+Die rechte Seite von $(***)$ ist ein Polynom in $\alpha_1,...,\alpha_n\\
+\xRightarrow[\text{für Polynome}]{\text{Identitätssatz}}$ alle Koeffizienten sind Null, insbesondere zu $\prod\limits_{i=1}^n\alpha_i.$\\
+$\Ra 0=\sum\limits_{(i_1,...,i_n)\in \underbrace{S_n}_{Permutationen}}\int f\circ Yd\kreuz\limits_{j=1}^n P_{i_j}\xlongequal[\substack{Permutations-\\invariant}]{Y\ ist}n!\int f\circ Yd\kreuzi P_i$\\
+Mit a) folgt $f\circ Y= 0\kreuzi P_i-f.s.\qf P_i\in\p_i(=\p \forall i)\\
+$Insbesondere gilt $f\circ Y=0\quad P^n-f.s.\forall P\in\p$\\
+(nach Bemerkung 11.6 i) folgt also die Behauptung)\QED
+\end{enumerate}
 
+\subsection{Beispiel}
+\label{12.3}
+Die Ordnungsstatistik Y ist suffizient und vollständig für $P^n$, falls
+\begin{enumerate}[label=(\roman*)]
+\item\begin{enumerate}[label=(\alph*)]
+	\item $\p=\mu_1(\R,B(\R))$
+	\item $\p=\p_\mu=\brac{P\in M_1(\R,B(\R)):P\ll\mu}$ für ein $\sigma$-endliches Maß $\mu$.
+	\item $\p$ aller diskreten Wahrscheinlcihkeitsmaße auf $\R$
+	\item $\p$ aller absolutstetigen Wahrscheinlichkeitsmaße auf $\R\quad (P\ll\lambda)$
+	\item $\p=\p_k:=\brac{P\in\mu_1(\R,B(\R)):\int|x|^kdP(x)<\infty},\qf k\in\N$
+\end{enumerate}
+\beweis
+Offensichtlich sind alle $\p$ konvex. Es gilt $\int fdP=0\qf P\in\p$\\
+Betrachte $B_1:=\brac{f>0},\quad B_2:=\brac{f>0}$. Angenommen, $P(B_i)>0$. Dann definiert \\
+$Q_i(A)=\dfrac{P(A\cap B_i}{P(B_i)}$ ein Wahrscheinlichkeitsmaß mit $Q_i\in\p$ und $Q_i\ll P$. Es folgt\\
+$\dfrac{dQ_i}{dP}=1_{B_i}P(B_i)^{-1}\xRightarrow{Q_i\in\p} 0=\int fdQ_i=\dfrac{1}{P(B_i)}\int \underbrace{f1_{B_i}}_{>0(<0)}dP>0)<0)\\
+\Ra f=0 P-f.s.\qf P\in\p\ra\p$ vollständig. \ \ \ \wid
 
+\item Für die Klassen $\p$ aus i) erhält man durch Lehmann-Scheffe \[
+F_n(t)=\dfrac{1}{n}\sumi 1_{\brac{x_i\leq t}}=\dfrac{1}{n}\sumi 1_{\brac{x_{(i)}\leq t}}\quad\text{(Empirische Verteilungsfunktion)}\]
+als UMVUE für die Verteilungsfunktion \[F(t)P((-\infty,t]),\ t\in\R\text{ für }X_i\text{ iid. }X_i\sim P\sim\p\]
 
+\item Man kann zeigen, dass für $\brac{N(a,1)^n:a\in\R}$ die Ordnungsstatistik nicht vollständig ist (die Menge ist nicht konvex).\\
+Sei nun $\p^n=\brac{P_\vartheta^\stuff:\vartheta\in\Theta, P_\vartheta\in M_1(\R,B(\R))}$ und $g:\p^n\ra\R$ ein statistisches Funktional von Interesse.\\
+\underline{Annahme}:\\
+$\exists$ ein erwartungstreuer Schätzer $h:\R^m\ra\R$ für $m\leq n$, d.h.\[
+E_{P_\vartheta^{\otimes m}}(h)=g(\vartheta)\qf\vartheta\in\Theta\hfill(12.1)\]
+Ist h symmetrisch/permutationsinvariant, d.h. gilt $h(x_1,...,x_m)=h(x_{\pi(1)},...,x_{\pi(n)}=\forall\pi\in S_m\hfill (12.2)$\\
+so liefern Bedingungen an $Y$ optimale Schätzer für g.
+\end{enumerate}
 
+\subsection{Definition}
+\label{12.4}
+Eine Abbildung $h:\R^m\ra\R$ mit (12.1) und (12.2) heißt \underline{symmetrischer Kern} des statischen Funktionals g.
 
+\subsection{Lemma}
+\label{12.5}
+Erfüllt $h:\R^m\ra\R$ (12.1), so ist \[h_s(x_1,...,x_n):=\dfrac{1}{m!}\sum\limits_{\pi\in S_m}h(x_{\pi(1)},...,x_{\pi(m)})\]
+ein symmetrischer Kern.
 
+\subsection{Definition und Satz}
+\label{12.6}
+Sei $h:\R^m\ra\R$ symmetrischer Kern von $g$ und $m\leq n$. Dann gilt\begin{enumerate}[label=(\alph*)]
+\item Die $\uu$-Statistik $\uu_n$ mit \\
+$\uu_n(x_1,...,x_n)=\mat{n\\m}^{-1}\sum\limits_{1\leq i_1<i_2<...<i_m\leq n}h(x_{i_1},...,x_{i_m})$\\
+ist erwartungstreu für $g$ mit \\
+$\uu_n=E_\bullet(\tilde h|Y_n)$ wobei $\tilde h(x_1,...,x_n):;h(x_1,...,x_m)$
+\item Ist $Y_n$ vollständig für $\p^n\subseteq M(\R,B(\R))^\stuff$ und $Var_\vartheta(h)<\infty\qf\vartheta\in\Theta$, dann ist $\uu_n$ UMVUE.\\
+\beweis
+\begin{enumerate}[label=(\alph*)]
+\item Es gilt $E_{P_\vartheta^n}(\tilde h)=E_{P_\vartheta^m}(h)=g(\vartheta)\qf\vartheta\in\Theta$. \\Für $x_1\leq...\leq x_n$ kann man zeigen, dass gilt\\
+$E(\tilde h)Y_n=(x_i)_{1\leq i\leq n})=\dfrac{1}{n!}\sum\limits_{T\in S_n}\tilde h(x_{\pi(1)},...,_{\pi(n)})\hfill(*)$ \\(Vergleiche Diskussion nach \hyperref[8.1]{Beispiel 8.1} zusammen mit Beispiel 5.4 im Skript von Pauly)\\
+$(*)$ ist offensichtlich erwartungstreu.\\
+Sei nun $A=\brac{i_1,...,i_m}\subseteq\brac{1,...,n}, |A|=m,$ so existieren\\
+$m!(n-m)!=\dfrac{n!}{\mat{n\\m}}$\\
+mögliche Permutationen $\pi$ mit $A=\brac{\pi(1),...,\pi(m)}.$\\
+Für all diese ist $h(x_{\pi(1)},...,_{\pi(m)})$ identisch. Es gilt\\
+$(*)=\mat{n\\m}^{-1}\sum\limits_{1\leq i_1<...<i_m\leq n}h(x_{i_1},...,x_{i_m})=\uu_n.$
+\item Da $Y_n$ suffizient und vollständig und $var_\vartheta(h)<\infty\qf\vartheta$, folgt mit a) und dem Soatz von Lehmann-Scheffe die Aussage.\QED
 
+\subsection{Beispiel}
+\label{12.7}
+Für die 5 Verteilungsfamilien $\p$ aus Beispiel 12.3 i) sind folgende $\uu$-Satistiken UMVUE, wobei $x_1,...,x_n$ iid. $P_\vartheta$\begin{enumerate}[label=(\alph*)]
+\item Betrachte $g(\vartheta)=var_\vartheta(x_1)$ und $\p'=\brac{P\in\p:var_\vartheta(x_1)<\infty}$. Für \\
+$h(x_1,x_2)=\dfrac{1}{2}(x_1-x_2)^2$ gilt $E_{P_\vartheta}(h)=g(\vartheta)$ und $\uu_n=E(\tilde h|Y_n)=...=\dfrac{1}{n-1}\sumi (x_i-\overline{x_n})^2$
+\item Betrachte $g(\vartheta)=E(|x_1-x_2|)$ ( Gini's mean difference) und\\
+$\p'=\brac{P\in\p:x_1\in\lp{1}(\p)}$\\
+Mit dem Kern \\
+$h(x_1,x_2)=|x_1-x_2|$ erhält man den UMVUE\\
+$\uu_n=\dfrac{1}{\mat{n\\2}}\sum\limits_{i<j}|x_i-x_j|$\\
+als \glqq Robusten Skalenparameterschätzer \grqq.\\
+(S Skalenparameter, falls $F(\dfrac{x}{c};s)=F(x;cs)\\
+F$ ist VF z.B. 0 der Normalverteilung)
+\end{enumerate}
 
-\fi
-\marginpar{20.Vorlesung, 09.07.2018}
+\end{enumerate}
+\end{enumerate}
+\marginpar{21.Vorlesung, 09.07.2018}
 \subsection{Satz (Basu)}
 \label{12.8}
 Sei $T:(\Omega,\f)\ra(\Omega',\f')$ suffizient und beschränkt vollständig für das SE $\rraum$ und $V:(\Omega,\f)\ra(\Omega'',\f'')$ eine Statistik mit \[
 P^V=Q\qf P\in\p\]
-für ein Wahrscheinlichkeitsmaß $Q$ auf $(\Omega'',\f'')$. Dann sind T und V P-stochastisch unabhängig $\forall P \in\p$\\
+für ein Wahrscheinlichkeitsmaß $Q$ auf $(\Omega'',\f'')$. \\
+Dann sind T und V P-stochastisch unabhängig $\forall P \in\p$\\
 \beweis 
 Sei $A\in\f''$. \[
 E_P(\underbrace{E_\bullet(1_A(V)|T)-Q(A)}_{=:f})=E_P(1_A(V))-Q(A)=P^V(A)-Q(A)=0\]
 Da f beschränkt ist, gilt $f=0\ P-f.s.$ d.h. \[
-Q(A)=E_\bullet(1_A(V)|T)\qf A\in\f''\]
+Q(A)=E_\bullet(1_A(V)|T)\qf A\in\f''\hfill(*)\]
 Sei nun $B\in\f'$. Dann gilt für $P\in\p\\
-P(V\in A,T\in B)=E_P(1_A(V)1_B(T)=E_P(E_P(1_A(V)1_B(T)|T))=E_P(1_B(T)E_\bullet(1_A(V)|T))=Q(A)P(T^{-1}(B))=P(V\in A)P(T\in B)$\\
+P(V\in A,T\in B)=E_P(1_A(V)1_B(T)=E_P(E_P(1_A(V)1_B(T)|T))=E_P(1_B(T)E_\bullet(1_A(V)|T))\xlongequal{(*)}Q(A)P(T^{-1}(B))=P(V\in A)P(T\in B)$\\
 
 \subsection{Beispiel}
 \label{12.9}
 Für $\sigma^2>0$ fest sei $\p=\brac{N(\mu,\sigma^2)^\stuff:\mu\in\R}$.\\
-Dann ist $T=\dfrac{1}{n}\sumi X_i$ suffizient und vollständig für $\p$ und \[
-V=\dfrac{1}{n-1}\sumi (X_i-\overline{X}_n)^2\]
+Dann ist $T=\dfrac{1}{n}\sumi x_i$ suffizient und vollständig für $\p$ und \[
+V=\dfrac{1}{n-1}\sumi (x_i-\overline{x}_n)^2\]
 hängt in der Verteilung nicht von $\mu$ ab.\\
 Folglich sind T und V unabhängig
 $\\\Ra$ Zähler und Nenner der t-Statistik $t_n=\dfrac{T}{V^{\dfrac{1}{2}}}$ sind unabhängig $\forall \mu\in\R$ und $\sigma^2>0$, falls $X_i$ iid mit $X_i\sim N(\mu,\sigma^2)$
 
 
 
-
+\pagebreak
 \section{Die Cramer-Rao-Ungleichung}
 Wenn wir suffiziente und vollständige Statistiken zur Verfügung haben, können wir gut UMVUE konstruieren. Was aber, wenn wir keine derartigen Statistiken finden  (vielleicht weil es gar keine gibt)?\\
 Wir leiten nun eine relativ allgemeine untere Schranke für die Varianz von Schätzern her. Erwartungstreue Schätzer, die dieses annehmen, sind dann automatisch UMVU.\\
@@ -1989,7 +2094,7 @@ Wir nehmen dabei stets an:
 
 \subsection{Annahme}
 \label{13.1}
-$\rraum$ sei ein SE mit $\p=\brac{P_\vartheta:\vartheta\in\theta}\ll\mu$ für $\mu \sigma$-endlich, wobei $\theta\subseteq\R$ offen ist und für $f_\vartheta:=\dfrac{dP_\vartheta}{d\mu}$ gilt:\begin{list}{•}{}
+$\rraum$ sei ein SE mit $\p=\brac{P_\vartheta:\vartheta\in\theta}\ll\mu$ für $\mu\quad \sigma$-endlich, wobei $\theta\subseteq\R$ offen ist und für $f_\vartheta:=\dfrac{dP_\vartheta}{d\mu}$ gilt:\begin{list}{•}{}
 \item $\exists B\in\f$ Nullmenge, so dass $\dfrac{\partial}{\partial\vartheta}f_\vartheta(x)=:\dot f_\vartheta(x)$ existiert $\forall\vartheta\in\theta$ und $\forall x\in B^c$
 \item Die Menge \[A=\brac{f_\vartheta=0}\]
 hängt nicht von $\vartheta$ ab.
@@ -2003,8 +2108,7 @@ Wir betrachten $x\sim P_\vartheta, \vartheta\in\theta$ unbekannt und $T=T(x)$ se
 heißt \underline{Score-Funktion} (von $\p$ in $\vartheta$)\[I_\vartheta:=E_\vartheta(\dot l_\vartheta(x)^2)=\int\dot l_\vartheta^2dP_\vartheta, \vartheta\in\theta\]
 ist die \underline{Fisher-Information} (von $\p$ in $\vartheta$)
 \item Eine Abbildung $\underbrace{\vartheta}_{\in\theta}\mapsto\int hf_\vartheta d\mu$ mit $h:\Omega\ra\R$ messbar heißt \underline{differenzierbar unter dem Integral}, falls \\
-$\dfrac{\partial}{\partial}$
-ASDASDASDASD
+$\dfrac{\partial}{\partial\vartheta}\int hf_\vartheta d\mu=\int h\dfrac{\partial}{\partial\vartheta}f_\vartheta d\mu$\\
 gilt und existiert.
 Analog definiert man k-fach differenzierbar unter dem Integral für $k\in\N$.
 \end{enumerate}
@@ -2020,13 +2124,13 @@ $\dfrac{\partial}{\partial\vartheta}g(\vartheta)=:\dot g(\vartheta).$
 Dann gelten\begin{enumerate}[label=(\alph*)]
 \item $Var_\vartheta(T)\geq\dfrac{(\dot g(\vartheta)+\dot b(\vartheta))^2}{I_\vartheta}$
 \item $Var_\vartheta(T)\geq \dfrac{\dot g(\vartheta)^2}{I_\vartheta}$ falls T erwartungstreu ist.
-\item In a) und b) gilt \glqq $=$ \grqq$\LRa \cdot l_\vartheta=A(\vartheta)(T-E_\vartheta(T))\quad\mu-$f.ü. mit einer Funktion A
+\item In a) und b) gilt \glqq $=$ \grqq$\LRa \dot l_\vartheta=A(\vartheta)(T-E_\vartheta(T))\quad\mu-$f.ü. \\mit einer Funktion A
 \item Ist $\vartheta\mapsto\int f_\vartheta d\mu$ 2-fach differenzierbar unter dem Integral, so gilt:\[
-I_\vartheta=-E_\vartheta\brc{\dfrac{\partial^2}{\partial\vartheta^2}log(f_\vartheta)}\]
+I_\vartheta=-E_\vartheta\brc{\dfrac{\partial^2}{\partial\vartheta^2}log(f_\vartheta)}=-E_\vartheta(\ddot l_\vartheta)\]
 \end{enumerate}
 \beweis
-$g(\vartheta)+b(\vartheta)=\int Tf_\vartheta d\mu=\int\limits_{B^c}Tf_\vartheta(d\mu)\\
-\Ra \dot{g}(\vartheta)+\dot b(\vartheta)=\int\limits_{A^c\cap B^c}T\underbrace{\dfrac{\partial}{\partial\vartheta}f_\vartheta}_{\dfrac{\dot f_\vartheta}{f_\vartheta}f\vartheta}=\int\limits_{A^c\cap B^c} T\dot l_\vartheta \underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
+$g(\vartheta)+b(\vartheta)=\int Tf_\vartheta d\mu=\int\limits_{B^c\cap A^c}Tf_\vartheta(d\mu)\\
+\Ra \dot{g}(\vartheta)+\dot b(\vartheta)=\int\limits_{A^c\cap B^c}T\underbrace{\dfrac{\partial}{\partial\vartheta}f_\vartheta}_{\dfrac{\dot f_\vartheta}{f_\vartheta}f\vartheta}d\mu=\int\limits_{A^c\cap B^c} T\dot l_\vartheta \underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
 =E_\vartheta(T\dot l_\vartheta)=Cov_\vartheta(T,\dot l_\vartheta)\hfill (*)$\\
 da $1=\int f_\vartheta d\mu$ und damit $0=\int\dfrac{\partial}{\partial\vartheta}f_\vartheta d\mu=E_\vartheta(\dot l_\vartheta)$.\\
 Aus $(*)$ und der CSU folgt:\[
@@ -2034,18 +2138,18 @@ Aus $(*)$ und der CSU folgt:\[
 Es folgen a) und b) mit \glqq $=$ \grqq genau dann, wenn $\dot l_\vartheta\in sp\brac{E_\vartheta(T)}\qf \vartheta$, dies zeigt c).\\
 Ad d)\\
 $E_\vartheta(\dot l_\vartheta)=\int \dot l_\vartheta f_\vartheta d\mu=0=\int\dfrac{\partial}{\partial\vartheta}f_\vartheta d\mu\\
-\Ra 0=\int\dfrac{\partial^2}{\partial\vartheta^2}d_\vartheta d\mu\xlongequal[regel]{Produkt-}\int\ddot l_\vartheta f_\vartheta d\mu+\int \brc{\dot l_\vartheta}^2\underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
+\Ra 0=\int\dfrac{\partial^2}{\partial\vartheta^2}f_\vartheta d\mu\xlongequal[regel]{Produkt-}\int\ddot l_\vartheta f_\vartheta d\mu+\int \brc{\dot l_\vartheta}^2\underbrace{f_\vartheta d\mu}_{dP_\vartheta}\\
 =\int\ddot l_\vartheta f_\vartheta d\mu+I_\vartheta\\
 \Ra I_\vartheta=-E_\vartheta(\ddot l_\vartheta)$\QED
 
 \subsection{Bemerkung}
 \label{13.4}
 \begin{enumerate}[label=(\roman*)]
-\item Die rechten Seiten der Ungleichungen in a) und b) heißen auch Informaionsschranken
-\item Die Craner-Rao-Ungleichung lässt sich auch unter weicheren Voraussetzungen beweisen (\grqq$\lp{1}$-Differenzierbarkeit\grqq)
+\item Die rechten Seiten der Ungleichungen in a) und b) heißen auch\\ Informationsschranken
+\item Die Cramer-Rao-Ungleichung lässt sich auch unter weicheren Voraussetzungen beweisen (\grqq$\lp{1}$-Differenzierbarkeit\grqq)
 \end{enumerate}
 
-\subsection{Beispiel}
+\subsection{Beispiel (Exponentialfamilie)}
 \label{13.5}
 Sei $\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)e^{\vartheta T}\cdot h,\ \vartheta\in\theta\subseteq\R$ offen.\\
 Nach \hyperref[11.11]{Lemma 11.11 c)} gilt\[
@@ -2053,5 +2157,78 @@ Nach \hyperref[11.11]{Lemma 11.11 c)} gilt\[
 $\Ra \dot l_\vartheta=\dfrac{\partial}{\partial\vartheta}log(f_\vartheta)=\dfrac{-C(\vartheta)E_\vartheta(T)e^{\vartheta T}h+C(\vartheta)Te^{\vartheta T}h}{C(\vartheta)e^{\vartheta T}h}=T-E_\vartheta(t)\\
 \Ra I_\vartheta=Var_\vartheta(T)$\\
 Mit Satz 13.3 d) gilt Gleichheit bei den Cramer-Rao-Schranken.
-%\fi
+\marginpar{22.Vorlesung, 12.07.2018}
+Übertragt man das ganze auf Produktexperimente mit $x=(x_1,...,x_n)\sim P_\vartheta^\stuff$, so erhält man \[\dot l_{n,\vartheta}:=\dot l_\vartheta(x)=\sumi(T(x_i)-E_\vartheta(T))\]
+und der  UMVUE\[
+\dfrac{1}{n}\sumi T(x_i)\]
+für $g(\vartheta)=E_\vartheta(T)$\\
+nimmt die Cramer-Rao-Schranke an.\\
+Beschreibt $I_\vartheta$ die Fisher-Information für n=1 (für $P\vartheta$) und $I_n(\vartheta)$ die des Produktexperimentes, so gilt\[I_n(\vartheta)=nI_\vartheta\]
+(Beachte: mehr Beobachtungen = mehr Information = kleinere C-R-Schranke)
+
+
+\pagebreak
+\section{Bayer-Schätzer}
+Bisher: Frequentistische Sicht, d.h. der Modellparameter $\vartheta$ ist fest aber unbekannt.\\
+Jetzt: Bayesianische Sicht, der Modellparameter $\vartheta$ ist zufällig (und die Verteilung spiegelt unser Vorwissen wider)\\
+Wir nehmen an, dass $(\Theta,\f_\Theta)$ ein messbarer Raum und mit $\brac{\vartheta}\in\f_\Theta\qf\vartheta\in\Theta$ und dass \[\vartheta\mapsto P_\vartheta(A)\qf A\in\f_\Theta\]
+messbar ist. \\
+Wir suchen weiterhin einen Schätzer endlicher Varianz für ein messbares statistisches Funktional $g:\Theta\Ra\R$
+
+\subsection{Definition}
+\label{14.1}
+\begin{enumerate}[label=(\alph*)]
+\item Ein Wahrscheinlichkeitsmaß $\xi\in M_1(\Theta,\f_\Theta)$ heißt \underline{a-priori-Verteilung}\\Wenn jemand weiß, welcher Buchstabe da hingehört (g?$\xi$?$\zeta$?$\varsigma$?) schreibe er/sie/es mir
+\item Für einen Schätzer $h:\Omega\ra\R$ für g heißt \\
+$R(\xi,h):=\int\limits_\Theta\int\limits_\Omega (h-g(\vartheta))^2dP_\vartheta d\xi(\vartheta)=\int\limits_\Theta E_\vartheta((h-g(\vartheta))^2d\xi(\vartheta)$ \\das \underline{Bayesrisiko} von h bzgl. g
+\item $h^*$ heißt \underline{Bayersschätzer} für $g$ bzgl $\xi$, falls\\ $R(\xi,h^*)\leq R(\xi,h)\qf$ Schätzer $h:\Omega\ra\R$
+\end{enumerate}
+
+\subsection{Modell}
+\label{14.2}
+Wir definieren ein Wahrscheinlichkeitsmaß $Q$ auf $(\Omega',\f'):=(\Theta\times\Omega,\f_\Theta\otimes\f)$ durch\\
+$Q(A')=\xi\times P_\vartheta(A')=\int\limits_\Theta\int\limits_\Omega 1_{A'}(\vartheta,x)dP_\vartheta(x)d\xi(\vartheta)\qf A'\in\f'$\\
+Die Projektionen seien:\\
+$\quad X:\Omega'\ra\Omega,\quad(\vartheta,x)\mapsto x$ (datengenerierender Prozess)\\
+$\quad \overline{\vartheta}:\Omega'\ra\Theta,\quad(\vartheta,x)\ra\vartheta$ (zufällige Parameter)\\
+Dann gilt:
+$\overline\vartheta\sim\xi$\\
+$Q^{X|\overline\vartheta=\vartheta}=P_\vartheta$\\
+Dies ist ein Kern.\\
+Wir nehmen weiter an, adss für alle $x\in\Omega$ die bedingte Verteilung \[\xi_x:=Q^{\overline\vartheta|X=x}\]
+auf $(\Theta,\f_\Theta)$ existiert.\\
+$\xi_x$ heißt \underline{a-posteriori-Verteilung}
+
+\subsection{Bemerkung}
+\label{14.3}
+\begin{enumerate}[label=(\alph*)]
+\item Die Grundidee der Bayesianischen Statistik ist:
+\begin{enumerate}
+	\item Man hat eine Vermutung über die zugrundeliegenden Parameter, die durch die a-priori-Verteilung beschrieben wird
+	\item Man beobachtet Daten und passt die Vermutun bestmöglich an, d.h. man bestimmt die neue a-posteriori Verteilung der Parameter als Verteilung gegeben die Daten (und ursprüngliche Vermutung)
+	\item Man hat also eine neue Vermutung über die Parameter, die bestmöglich gegeb die Beobachtungen und ursprüngliche Vermutung ist.
+\end{enumerate}	
+\item Die erste Vermutung wird immer \underline{subjektiv} sein. Ein Satz von Drob zeigt, dass für $n\toinf$ in Produktexperimenten die a-posteriori-Verteilung gegen das Diracmaß beim wahren Parameter konvergiert
+\item Bayessche Statistik erlaub es einfach \glqq Expertenmeinungen \grqq zu integrieren
+\item Gerne wird Objektivität durch die Wahl von \underline{uninformative priors} ($\xi$=Gleichverteilung) suggeriert. Auf nicht-endlichen / nicht-kompakten Parameterräumen werden unter Umständen \underline{im proper priors} verwendet (.z.B. das Lebesguemaß auf $\R$.
+\item In schönen Fällen kann man die a-posteriori-Verteilung analytisch bestimmen (conjugate priors). Fast immer kann man diese durch MCML (Markov-Chain-Monte-Carlo) Verfahren simulieren.
+
+\subsection{Satz}
+\label{14.4}
+Ist h ein Schätzer mit endlichem Bayesrisiko, $R(\xi,h)<\infty$, so ist $h^*$ definiert durch\[h^*(x):=E_Q(g\circ\overline\vartheta|X=x)=\int\limits_\Theta g(\vartheta)d_{\xi_x)}(\vartheta)\]
+ein Bayesschätzer für g bzgl $\xi$\\
+\beweis
+$\infty>R(\xi,h)=\int\limits_\Theta\int\limits_\Omega (h-g(\vartheta))^2dP_\vartheta d\xi(\vartheta)\xlongequal{Fubini}\int\limits_\Omega\underbrace{\int\limits_\Theta (h-g(\vartheta))^2dQ^{\overline\vartheta|X=x}(\vartheta)}_{=:A(x)}dQ^X(x)$\\
+$R(\xi,h)$ wird minimal, falls wir $A(x)\qf x\in\Omega$ fest minimieren.\\
+Erinnerung: $a\mapsto E((Y-a)^2)$ minimal für $a=E(Y)\\
+\Ra A(x)$ wird minimal für \[
+h^*(x)=\int\limits_\Theta g(\vartheta)dQ^{\overline\vartheta|X=x}(\vartheta)\]\QED
+\end{enumerate}
+
+\subsection{Beispiel}
+\label{14.6}
+Ist $P_\vartheta=N(\vartheta,1)^\stuff$, $\Theta=\R$, $g(\vartheta)=\vartheta$ und wählt man $\xi_k=N(0,k)$, dann ist der Bayesschätzer von g zgl $\xi_k$: \[h^*(x_1,...,x_n)=\dfrac{nK}{nK+1}\overline x_n\]
+
+\section{Lineare Regression}
+siehe Folien
 \end{document}

@@ -1,4 +1,4 @@
-\select@language {german}
+\babel@toc {german}{}
 \contentsline {part}{I\hspace {1em}Grundlagen der Ma\IeC {\ss }theorethischen Wahrscheinlichkeitstheorie}{6}{part.1}
 \contentsline {section}{\numberline {1}0-1 Gesetze}{6}{section.1}
 \contentsline {subsection}{\numberline {1.1}Definition (liminf,limsup)}{6}{subsection.1.1}
@@ -127,11 +127,30 @@
 \contentsline {subsection}{\numberline {11.9}Beispiel}{57}{subsection.11.9}
 \contentsline {subsection}{\numberline {11.10}Beispiel}{57}{subsection.11.10}
 \contentsline {subsection}{\numberline {11.11}Lemma (Momente bei Exponentialfamilien)}{58}{subsection.11.11}
-\contentsline {subsection}{\numberline {11.12}Satz (Basu)}{59}{subsection.11.12}
-\contentsline {subsection}{\numberline {11.13}Beispiel}{59}{subsection.11.13}
-\contentsline {section}{\numberline {12}Die Cramer-Rao-Ungleichung}{60}{section.12}
-\contentsline {subsection}{\numberline {12.1}Annahme}{60}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Definition}{60}{subsection.12.2}
-\contentsline {subsection}{\numberline {12.3}Satz}{61}{subsection.12.3}
-\contentsline {subsection}{\numberline {12.4}Bemerkung}{62}{subsection.12.4}
-\contentsline {subsection}{\numberline {12.5}Beispiel}{62}{subsection.12.5}
+\contentsline {subsection}{\numberline {11.12}Definition}{60}{subsection.11.12}
+\contentsline {subsection}{\numberline {11.13}Satz (Eindeutigkeitssatz)}{60}{subsection.11.13}
+\contentsline {subsection}{\numberline {11.14}Satz}{60}{subsection.11.14}
+\contentsline {subsection}{\numberline {11.15}Beispiel}{61}{subsection.11.15}
+\contentsline {section}{\numberline {12}U-Statistiken}{63}{section.12}
+\contentsline {subsection}{\numberline {12.1}Definition}{63}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Satz}{63}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Beispiel}{65}{subsection.12.3}
+\contentsline {subsection}{\numberline {12.4}Definition}{65}{subsection.12.4}
+\contentsline {subsection}{\numberline {12.5}Lemma}{66}{subsection.12.5}
+\contentsline {subsection}{\numberline {12.6}Definition und Satz}{66}{subsection.12.6}
+\contentsline {subsection}{\numberline {12.7}Beispiel}{66}{subsection.12.7}
+\contentsline {subsection}{\numberline {12.8}Satz (Basu)}{67}{subsection.12.8}
+\contentsline {subsection}{\numberline {12.9}Beispiel}{67}{subsection.12.9}
+\contentsline {section}{\numberline {13}Die Cramer-Rao-Ungleichung}{69}{section.13}
+\contentsline {subsection}{\numberline {13.1}Annahme}{69}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Definition}{69}{subsection.13.2}
+\contentsline {subsection}{\numberline {13.3}Satz}{70}{subsection.13.3}
+\contentsline {subsection}{\numberline {13.4}Bemerkung}{71}{subsection.13.4}
+\contentsline {subsection}{\numberline {13.5}Beispiel (Exponentialfamilie)}{71}{subsection.13.5}
+\contentsline {section}{\numberline {14}Bayer-Sch\IeC {\"a}tzer}{72}{section.14}
+\contentsline {subsection}{\numberline {14.1}Definition}{72}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Modell}{72}{subsection.14.2}
+\contentsline {subsection}{\numberline {14.3}Bemerkung}{72}{subsection.14.3}
+\contentsline {subsection}{\numberline {14.4}Satz}{73}{subsection.14.4}
+\contentsline {subsection}{\numberline {14.5}Beispiel}{74}{subsection.14.5}
+\contentsline {section}{\numberline {15}Lineare Regression}{74}{section.15}
