@@ -202,7 +202,7 @@ Da $T_\infty$ $\sigma$-Algebra, gilt auch\\
 \[\liminf\limits_{n\rightarrow\infty}A_n=\left(\limsup\limits_{n\rightarrow\infty}A_n^c\right)^c\in T_\infty\]
 
 \subsection{Definition (Unabhängige Mengensysteme)}
-Sei $\raum$ ein Wahrscheinlichkeitsraum und $I\neq\emptyset$ eine Indexmenge. Eine Familie von Mengensystemen $\left(\varphi_n\right)_{n\in\N}$ mit $\varphi_i \subseteq\f$  heißt unabhängig, falls $\forall y\subseteq I, \vert y \vert < \infty, y\neq\emptyset$ gilt \\
+Sei $\raum$ ein Wahrscheinlichkeitsraum und $I\neq\emptyset$ eine Indexmenge. Eine Familie von Mengensystemen $\left(\varphi_n\right)_{i\in I}$ mit $\varphi_i \subseteq\f$  heißt unabhängig, falls $\forall J\subseteq I, \vert J \vert < \infty, y\neq\emptyset$ gilt \\
 \[P\left(\bigcap\limits_{j\in J}A_j\right)=\prod\limits_{j\in J}P\left(A_j\right)$ $\forall A_j \in\varphi_j\]\\
  \textbf{Beachte}: Sei $\left( x_i \right)_{i\in I}$ eine Familie von Zufallsvariablen mit $x_i\raum\mapsto\left(\Omega_i,\f_i \right)$, dann sind diese Unabhängig genau dann, wenn die Familie von $\sigma$-Algebren $\left(x_i^{-1}\left(\f_i\right)\right)_{i\in I}$ unabhängig ist.
 
@@ -312,7 +312,7 @@ In der Regel vernachlässigt man Unterschiede auf Nullmengen und nennt f.s. glei
  \item $(\mc{L}^2(P),\Vert\cdot\Vert_2)$ ist ein Hilbertraum mit Skalarprodukt $(X,Y)\mapsto E(X^TY)$.
 \end{list}
 \item Man kann zeigen: \\
-$\mc{L}^p$ ist für $p\int (0,1)$ ein vollständiger metrischer Raum mit Metrik $d(X,Y)=E(\Vert X-Y\Vert^p)$
+$\mc{L}^p$ ist für $p\in (0,1)$ ein vollständiger metrischer Raum mit Metrik $d(X,Y)=E(\Vert X-Y\Vert^p)$
 \item Da $P(\Omega)=1$ gilt $\mc{L}^q\subseteq \mc{L}^p\ \forall p,q\in\R^+$ mit $q^p$
 \item Fast sichere Konvergenz ist nicht metrisierbar.
 \end{enumerate}
@@ -390,7 +390,7 @@ Seien $\folge{X}{n},X$ Zufallsvariablen mit $X_n\xrightarrow{f.s.}X$ und $\norm{
 $X_n\xrightarrow{\mathcal{L}^1}X$ und $E(X_n)\xrightarrow{n\rightarrow\infty}E(X)$.
 
 \subsection{Satz (Vitali)}
-Seien $\folge{X}{n},X$ Zufallsvariablen mit $X_n\xrightarrow{f.s.}X$ und $\lsup\norm{X_n}_p\leq\norm{X}$ für ein $p\in(1,\infty)$. Dann gilt $X_n\xrightarrow{\mathcal{L}^p}X$.\\
+Seien $\folge{X}{n},X$ Zufallsvariablen mit $X_n\xrightarrow{f.s.}X$ und $\lsup\norm{X_n}_p\leq\norm{X}_p$ für ein $p\in(1,\infty)$. Dann gilt $X_n\xrightarrow{\mathcal{L}^p}X$.\\
 Weitere wichtige Konvergenzsätze nutzen das Konzept der Gleichgradigen Integrierbarkeit (uniform integrability).
 
 \subsection{Definition (Gleichgradige Integrierbarkeit)}
@@ -413,8 +413,8 @@ Die Umkehrung gilt nicht.
 
 \subsection{Lemma}
 \begin{enumerate}[label=(\alph*)]
-\item Ist eine Familie von Zufallsvariablen beschränkt in $\lp{p}$ f+r $p>1$, so ist sie UI.
-\item Sei $\folge[\mc{I}]{X}{i}$ eine Familie von Zufallsvariablen, $Y\int\lp{1}$ mit $\norm{X_i}\leq Y$ f.s. $\forall i \in\mc{I}$. Dann ist $\folge[\mc{I}]{X}{i}$ UI.\\
+\item Ist eine Familie von Zufallsvariablen beschränkt in $\lp{p}$ für $p>1$, so ist sie UI.
+\item Sei $\folge[\mc{I}]{X}{i}$ eine Familie von Zufallsvariablen, $Y\in \lp{1}$ mit $\norm{X_i}\leq Y$ f.s. $\forall i \in\mc{I}$. Dann ist $\folge[\mc{I}]{X}{i}$ UI.\\
 \end{enumerate}
 \beweis
 \begin{enumerate}[label=(\alph*)]
