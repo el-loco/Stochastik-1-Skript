@@ -1477,8 +1477,8 @@ $\mu*\lambda(A)=\int \lambda(A-y)d\mu(y)=\lambda(A)\underbrace{\int d\mu(y)}_{=1
 \end{enumerate}
 
 \section{Suffizienz}
-$X_1,...,X_n$ seien Realisierungen unabhängiger Versuchswiederholungen nach einer unbekannten Verteilung P auf $(\Omega,F)$.\\
-n-faches Produktmodell: $\p=\brac{P_\vartheta^\stuff:\vartheta\in\theta}$.\\
+$X_1,...,X_n$ seien Realisierungen unabhängiger Versuchswiederholungen nach einer unbekannten Verteilung P auf $(\Omega,\f)$.\\
+$n$-faches Produktmodell: $\p=\brac{P_\vartheta^\stuff:\vartheta\in\Theta}$.\\
 Häufig besitzen Teile der Daten $X_1,...,X_n$ keine zusätzliche Information über das wahre $\vartheta$!\\
 \textbf{Ziel:} \begin{list}{•}{}
 \item Transformation der Daten ohne Informationsverlust
@@ -1488,7 +1488,7 @@ Sei zum Beispiel\\
 $T:(\Omega^n,\f^\stuff)\ra(\Omega_T,\f_T)$ (polnisch) eine Transformation.\\
 Wenn die bedingte Verteilung ($P\in\p$ unbekannt)
 \[(P_\vartheta^\stuff)^{id|T=t}\]
-für alle t unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,...,X_n)$ alle Informationen der Daten über $\theta$ enthalten.
+für alle $t$ unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,...,X_n)$ alle Informationen der Daten über $\theta$ enthalten.
 
 \subsection{Beispiele}
 \label{10.1}
@@ -1496,10 +1496,10 @@ für alle t unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,...
 \item Betrachte $\brc{\brac{0,1}^n,\p(\brac{0,1}^n), Binom(1,\vartheta)^\stuff}$.\\
 Dann sollte die Komprimierung\\
 $T:(x_1,...,x_n)\mapsto\sm[n]{i=1}x_i$ ohne Informationsverlust sein.\\
-Es gilt $\forall 0\leq k\leq n$ und $\forall\brac{x_1,...,x_n}+\brac{0,1}^n$ mit $\sm[n]{i=1}X_i=K:\\
-P_\vartheta^n((x_1,...,x_n)|T=K)=\dfrac{\prod\limits_{i=1}^n\vartheta^{x_i}(1-\vartheta)^{1-x_i}}{\mat{n\\K}\vartheta^K(1-\vartheta)^{n-K}}=\mat{n\\K}^{-1}$\\
-Was nicht von $\vartheta$ abhängt.
-\item Gegeben sei ein Produktmodell $(\Omega^n,\f^\stuff, (P_\vartheta^\stuff)_{\vartheta\in\theta})$\\
+Es gilt $\forall 0\leq K\leq n$ und $\forall\brac{x_1,...,x_n}\in\brac{0,1}^n$ mit $\sm[n]{i=1}x_i=K:\\
+P_\vartheta^n((x_1,...,x_n)|T=K)=\dfrac{\prod\limits_{i=1}^n\vartheta^{x_i}(1-\vartheta)^{1-x_i}}{\mat{n\\K}\vartheta^K(1-\vartheta)^{n-K}}=\mat{n\\K}^{-1}$,\\
+was nicht von $\vartheta$ abhängt.
+\item Gegeben sei ein Produktmodell $(\Omega^n,\f^\stuff, (P_\vartheta^\stuff)_{\vartheta\in\Theta})$\\
 Dann sollte die Reihenfolge der Beobachtungen irrelevant sein.\\ Insbesondere sollten die Ordnungsstatistiken dieselben Informationen beinhalten wie die Daten. In der Tat kann man zeigen (siehe Skript Pauly)\\
 $P_\vartheta^{\stuff\  id|(x_{(1)},...,x_{(n)})=(y_1,...,y_n)}$\\
 hängt nicht von $\vartheta$ ab.\\
@@ -1509,23 +1509,23 @@ Da bedingte Verteilungen nicht immer existieren müssen, nutzen wir für die all
 \subsection{Definition}
 \label{10.2}
 Sei $(\Omega,\f,\p)$ ein statistisches Experiment.\begin{enumerate}[label=(\alph*)]
-\item Eine \underline{Teil-$\sigma$-Algebra} $\tau\subseteq\f$ heißt \underline{suffizient für $\p$}, (bzw. $\vartheta$), falls für alle $A\subset\f$ eine von $\vartheta$ unabhängige Version $E_\bullet(1_a|\tau)$ des bedingten Erwartungswertes $E_{P_\vartheta}(1_A|\tau)$ existiert
+\item Eine \underline{Teil-$\sigma$-Algebra} $\tau\subseteq\f$ heißt \underline{suffizient für $\p$}, (bzw. $\vartheta$), falls für alle $A\subset\f$ eine von $\vartheta$ unabhängige Version $E_\bullet(1_A|\tau)$ des bedingten Erwartungswertes $E_{P_\vartheta}(1_A|\tau)$ existiert.
 \item Sei $T:(\Omega,\f)\ra(\Omega',\f')$ eine Statistik.\\
 T heißt \underline{suffizient für $\p$}, falls $\tau=T^{-1}(\f')(=\sigma(T))$ suffizient ist.\\
 \end{enumerate}
 
 \textbf{Interpretation:}
 Wir werden sehen:\begin{enumerate}
-\item Bei der Suffizienz enhält das SE $(\Omega, \tau, \brac{P_{\vartheta|\tau}}_{\vartheta\in\theta})$ \\genau soviel Information über $\vartheta$ wie das Ausgangsexperiment
-\item Die Reduktion der Daten wird einen Effizienzgewinn (niedrigere Varianz) mit sich bringen
+\item Bei der Suffizienz enhält das SE $(\Omega, \tau, \brac{P_{\vartheta|\tau}}_{\vartheta\in\Theta})$ \\genau soviel Information über $\vartheta$ wie das Ausgangsexperiment.
+\item Die Reduktion der Daten wird einen Effizienzgewinn (niedrigere Varianz) mit sich bringen.
 \end{enumerate}
-d.h. Suffizienz ist sozusagen \glqq Datenredutkion ohne Informationsverlust \grqq.
+D. h. Suffizienz ist sozusagen \glqq Datenredutkion ohne Informationsverlust\grqq.
 
 
 \subsection{Lemma}
 \label{10.3}
-Sei $X$ eine Statistik auf $(\Omega,\f),\ X\in\lp{1}(P_\vartheta)\quad \forall\vartheta\in\theta$ und $\tau\subseteq\f$ suffizient.\\
-Dann existiert eine Version $E_\bullet(X|\tau)$ von $E_{P_\vartheta}(X|\tau)$ die unabhängig von $\vartheta$ ist.\\
+Sei $X$ eine Statistik auf $(\Omega,\f),\ X\in\lp{1}(P_\vartheta)\quad \forall\vartheta\in\Theta$ und $\tau\subseteq\f$ suffizient.\\
+Dann existiert eine Version $E_\bullet(X|\tau)$ von $E_{P_\vartheta}(X|\tau)$, die unabhängig von $\vartheta$ ist.\\
 \beweis
 Offensichtlich für $X=1_A\quad\forall A\in\f$. Dann maßtheoretische Induktion.\QED
 
@@ -1534,22 +1534,22 @@ Offensichtlich für $X=1_A\quad\forall A\in\f$. Dann maßtheoretische Induktion.
 \begin{list}{•}{}
 \item Ist $T^{-1}(\f')=\f$, so ist $T$ suffizient.
 \item $\tau=\brac{\emptyset,\Omega}:$ Suffizienz hieße $E_\vartheta(1_A|\tau)=P_\vartheta(A)\quad\forall A\in\f$ wäre unabhängig von $\vartheta$. Das ist nur in trivialen Fällen möglich.
-$\Ra$ suffiziente $\sigma$-Algebren/Statistiken können nicht \glqq zu klein\grqq\ sein
+$\Ra$ suffiziente $\sigma$-Algebren/Statistiken können nicht \glqq zu klein\grqq\ sein.
 \end{list}
 
 \subsection{Lemma}
 \label{10.5} Sei $(\Omega,\f,\p)$ ein statistisches Experiment.\begin{enumerate}[label=(\alph*)]
 \item T ist suffizient $\LRa \forall A\in\f$ existiert eine von $P_\vartheta$ unabhängige Version $E_\bullet(1_A|T=\cdot)$ von $E_{P_\vartheta}(1_A|T=\cdot).$
 \item Existiert eine von $P_\vartheta\in\p$ unabhängige Version \\
-$K(t,\cdot)=P^{id|T=t}$\\
+$K(t,\cdot)=P^{id|T=t}$,\\
 so ist T suffizient für $\p$.
 \end{enumerate}
 
 \subsection{Satz (Rao-Blackwell)}
 \label{10.6}
-Sei $(\Omega,\f,\p)$ ein SE und S ein erwartungstreuer Schätzer für $g(\vartheta)$. Weiter sei $\tau$ suffizient und $h:=E_\bullet(S|\tau)$. Dann gilt:\begin{enumerate}[label=(\roman*)]
-\item h ist $\tau$-messbarer erwartungstreuer Schätzer für $g(\nu)$
-\item $MSE_\vartheta(h)=Var_\vartheta(h)\leq Var_\vartheta(S)=MSE_\vartheta(S)\qf\vartheta\in\theta$ mit \grqq$=$\grqq, falls \\
+Sei $(\Omega,\f,\p)$ ein SE und $S$ ein erwartungstreuer Schätzer für $g(\vartheta)$. Weiter sei $\tau$ suffizient und $h:=E_\bullet(S|\tau)$. Dann gilt:\begin{enumerate}[label=(\roman*)]
+\item $h$ ist $\tau$-messbarer erwartungstreuer Schätzer für $g(\nu)$
+\item $MSE_\vartheta(h)=Var_\vartheta(h)\leq Var_\vartheta(S)=MSE_\vartheta(S)\qf\vartheta\in\Theta$ mit \grqq$=$\grqq, falls \\
 $E_\vartheta(S|\tau)=S P_\vartheta-f.s.\forall\vartheta$\\
 \beweis
 \hyperref[6.2]{Bedingte Jensensche Ungleichung}\QED
@@ -1565,7 +1565,7 @@ Sei $(\Omega,\f,\p)$ ein statistisches Experiment, $\p\ll\mu$ mit $\mu\ \sigma$-
 \subsection{Bemerkung}
 \label{10.8}
 \marginpar{16.Vorlesung, 18.06.2018}
-Es genügt in b) $\dfrac{dP}{d\mu}=g_P\circ T$ zu fordern (ersetzte $\mu$ durch $\widehat{\mu}$ mit $\widehat{\mu}(A)=\int\limits_Ahd\mu$\\
+Es genügt in b) $\dfrac{dP}{d\mu}=g_P\circ T$ zu fordern (ersetzte $\mu$ durch $\widehat{\mu}$ mit $\widehat{\mu}(A)=\int\limits_Ahd\mu$).\\
 \beweis
 Wir zeigen nur den diskreten Fall.\\
 \glqq $\Ra$ \grqq $\forall x\in\Omega,\ \forall P\in\p\ \exists$ Funktionen $f_x$ mit \[
@@ -1597,7 +1597,7 @@ Sei $(\Omega,\f,\p)$ SE, $\p\ll\mu,\ \mu\ \sigma$-endlich und $\tau\subseteq\f\ 
 \label{10.10}
 Sei $(\Omega,\f,\p)$ SE, $\p\ll\mu, \mu\ \sigma$-endlich und $\tau$ eine suffiziente $\sigma$-Algebra. Dann ist jede $\sigma$-Algebra $\tau'$ mit $\tau\subseteq\tau'\subseteq\f$ ebenfalls suffizient.\\
 \beweis
-In Korollar 10.9 ist $f_p\ \tau$- und damit $\tau'$-mmessbar.\QED
+In Korollar 10.9 ist $f_p\ \tau$- und damit $\tau'$-messbar.\QED
 
 \subsection{Korollar}
 \label{10.11}
@@ -1606,7 +1606,7 @@ Dann ist $\tau_1\otimes\tau_2=\sigma(\tau_1\times\tau_2)$ suffizient für \\
 $\p_1\otimes\p_2:=\brac{P_1\otimes P_2:P_i\in\p_i, i=1,2}$.\\
 \beweis
 \[\dfrac{dP_1\otimes P_2}{d\mu_1\otimes\mu_2}(x,y)=\dfrac{dP_1}{d\mu_1}(x)\dfrac{dP_2}{d\mu_2}(y)=\underbrace{\overbrace{f_{P_1}(x)}^{\tau_1-messbar}\overbrace{f_{P_2}(y)}^{\tau_2-messbar}}_{\tau_1\otimes\tau_2-messbar}\cdot\underbrace{h_1(x)h_2(y)}_{h(x,y)}\]
-Mit Korollar 10.9 folgt die Behauptung\QED
+Mit Korollar 10.9 folgt die Behauptung.\QED
 
 \subsection{Korollar}
 \label{10.12}
@@ -1617,10 +1617,10 @@ Folgt aus Korollar 10.11, da $\sigma(T)\supseteq\sigma(f\circ T)$.\QED
 
 \subsection{Definition}
 \label{10.13}
-Sei $(\Omega,\f,\p)$ ein SE. $\p=\brac{P_\vartheta:\vartheta\in\theta}$ heißt \underline{Exponentialfamilie}, falls $\mu\ \sigma$-endlich existiert mit $\p\ll\mu$ und es Funktionen $g_1,...,g_k:\theta\ra\R$ für $k\in\N$ sowie Statistiken $T_1,...,T_k:\Omega\ra\R$ gibt mit \[
-\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)\hfill(10.4)\]
+Sei $(\Omega,\f,\p)$ ein SE. $\p=\brac{P_\vartheta:\vartheta\in\Theta}$ heißt \underline{Exponentialfamilie}, falls $\mu\ \sigma$-endlich existiert mit $\p\ll\mu$ und es Funktionen $g_1,...,g_k:\Theta\ra\R$ für $k\in\N$ sowie Statistiken $T_1,...,T_k:\Omega\ra\R$ gibt mit \[
+\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x),\hfill(10.4)\]
 wobei $h:\Omega\ra\R$ messbar und\[
-C(\vartheta)=\brc{\int\limits_\Omega\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)d\mu(x)}^{-1}\]
+C(\vartheta)=\brc{\int\limits_\Omega\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)d\mu(x)}^{-1}.\]
 
 \subsection{Satz}
 \label{10.14}
@@ -1628,25 +1628,25 @@ Für eine Exponentialfamilie $\p$ wie in (10.4) ist $(T_1,T_2,...,T_k)$ eine suf
 \beweis
 Nutze \hyperref[10.7]{Theorem 10.7} mit $\\
 g_P:\R^k\ra\R\\
-(x_1,...,x_n)\mapsto\exp\brc{\sm[k]{i=1}g_i(\vartheta)x_i}$\QED
+(x_1,...,x_n)\mapsto\exp\brc{\sm[k]{i=1}g_i(\vartheta)x_i}$.\QED
 
 \subsection{Beispiel (Suffizienz und Exponentialfamilien)}
 \label{10.15}
 \begin{enumerate}[label=(\alph*)]
-\item $\theta\in(0,1), P_\vartheta=Binom(n,\vartheta), \mu=\sm[]{n\in\N_0}\delta_n$ (Zählmaß)\\
+\item $\Theta\subset(0,1), P_\vartheta=Binom(n,\vartheta), \mu=\sm[]{n\in\N_0}\delta_n$ (Zählmaß).\\
 Dann gilt
 \begin{align}
 P_\vartheta(\brac{x}) & = \mat{n\\k}\vartheta^x(1-\vartheta)^{n-x}1_{\brac{0,...,n}}(x)\\
-& = \underbrace{(1-\vartheta) ^n}_{C(\vartheta)}\exp\bigg(\underbrace{x}_{T_1(x)}\underbrace{log\dfrac{\vartheta}{1-\vartheta}}_{g_1(\vartheta)}\bigg)\underbrace{\mat{n\\x}1_{\brac{0,...,n}}(x)}_{h(x)}
+& = \underbrace{(1-\vartheta) ^n}_{C(\vartheta)}\exp\bigg(\underbrace{x}_{T_1(x)}\underbrace{\log\dfrac{\vartheta}{1-\vartheta}}_{g_1(\vartheta)}\bigg)\underbrace{\mat{n\\x}1_{\brac{0,...,n}}(x)}_{h(x)}.
 \end{align}
-Somit liegt eine Exponentialfamilie vor und $T(x)=x$ ist suffizient für $\p=\brac{Binom(n,\vartheta:\vartheta\in(0,1)}$
-\item Offensichtlich sind Produkte von Exponentialfamilien wieder\\ Exponentialfamilien, z.B. betrachte a) mit $n=1, \theta=(0,1)$, und davon das N-fache Produktexperiment. Dann gilt: $P_\vartheta=Binom(1,\vartheta)^{\otimes N}\\
+Somit liegt eine Exponentialfamilie vor und $T(x)=x$ ist suffizient für $\p=\brac{Binom(n,\vartheta:\vartheta\in(0,1)}$.
+\item Offensichtlich sind Produkte von Exponentialfamilien wieder\\ Exponentialfamilien, z.B. betrachte a) mit $n=1, \Theta=(0,1)$, und davon das $N$-fache Produktexperiment. Dann gilt: $P_\vartheta=Binom(1,\vartheta)^{\otimes N}\\
 P_\vartheta(\brac{x})=\vartheta^{\sm[N]{i=1}x_i}(1-\vartheta)^{N-\sm[N]{i=1}x_i}\\
 =(\underbrace{1-\vartheta}_{C(\vartheta)})^N\exp\bigg(\underbrace{\sm[N]{i=1}x_i}_{T_1(x)}\underbrace{log\brc{\dfrac{\vartheta}{1-\vartheta}}}_{g_1(\vartheta)}\bigg)\underbrace{1_{\brac{0,1}}(x)}_{h(x)}$\\
 Somit ist $T(x)=\sm[N]{i=1}x_i$ suffizient.
-\item Sei $\vartheta=(\mu,\sigma^2)\in\theta=\R\times\R^+\setminus\brac{0},\ \p_\vartheta=N(\mu,\sigma^2)^\stuff$\\
+\item Sei $\vartheta=(\mu,\sigma^2)\in\Theta=\R\times\R^+\setminus\brac{0},\ \p_\vartheta=N(\mu,\sigma^2)^\stuff$\\
 und $\mu=\lambda^n$. Dann gilt \[
-\dfrac{dP_\vartheta}{d\mu}(x_1,...,x_n)=\underbrace{\brc{\dfrac{1}{\sqrt{2\pi\sigma^2}}}^ne^{-\dfrac{n\mu^2}{2\sigma^2}}}_{C(\vartheta)}\exp\\bigg(\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\vartheta)}\underbrace{\sm[N]{i=1}x_i}_{h(x)}-\underbrace{\dfrac{1}{2\varsigma^2}}_{g_2(\vartheta)}\underbrace{\sm[N]{i=1}x_i^2}_{T_2(i)}\bigg)
+\dfrac{dP_\vartheta}{d\mu}(x_1,...,x_n)=\underbrace{\brc{\dfrac{1}{\sqrt{2\pi\sigma^2}}}^ne^{-\dfrac{n\mu^2}{2\sigma^2}}}_{C(\vartheta)}\exp\bigg(\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\vartheta)}\underbrace{\sm[n]{i=1}x_i}_{h(x)}-\underbrace{\dfrac{1}{2\varsigma^2}}_{g_2(\vartheta)}\underbrace{\sm[n]{i=1}x_i^2}_{T_2(i)}\bigg)
 \]
 Also liegt eine Exponentialfamilie mit $k=2$ und suffiziente Statistik\[
 T(x)=(T_1(x),T_2(x))=\brc{\sm[N]{i=1}x_i,\sm[N]{i=1}x_i^2}\]
@@ -1666,9 +1666,9 @@ $\brc{\overline{x_n},\dfrac{1}{n-1}\sm[n]{i=1}(x_i-\overline{x_n})^2}$(ebenfalls
 \label{10.16} 
 Sei $\mc{U}_{(a,b)}=\dfrac{\lambda\vert_{(a,b)}}{b-a}$ die Gleichverteilung auf $(a,b), b>a$. Sei \\
 $\mc{P}=\brac{\mc{U}_{(a,b)}^\stuff:\vartheta=(a,b)\in\R^2, a<b}$. Aus \hyperref[10.13]{Definition 10.13} folgt sofort, dass in einer Exponentialfamilie gilt\[
-P_{\vartheta_1}\sim P_{\vartheta_2}\forall\vartheta_1,\vartheta_2\in\theta\]
+P_{\vartheta_1}\sim P_{\vartheta_2}\forall\vartheta_1,\vartheta_2\in\Theta.\]
 Somit ist $\mc{P}$ sicher keine Exponentialfamilie. Aber $T(x)=\brc{\min\limits_{i=1,...,n}x_i,\max\limits_{i=1,...,n}x_i}$ ist suffizient, denn:\[
-\dfrac{dP_\vartheta}{d\lambda^n}(x)=\dfrac{1}{(b-a)^n}\prod\limits_{i=1}^n1_{(a,b)}(x_i)=\dfrac{1}{(b-a)^n}1_{(a,\infty)}(\min x_i)1_{(-\infty,b)}(\max x_i)
+\dfrac{dP_\vartheta}{d\lambda^n}(x)=\dfrac{1}{(b-a)^n}\prod\limits_{i=1}^n1_{(a,b)}(x_i)=\dfrac{1}{(b-a)^n}1_{(a,\infty)}(\min x_i)1_{(-\infty,b)}(\max x_i),
 \]
 womit das Neyman-Kriterium erfüllt ist.
 
