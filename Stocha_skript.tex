@@ -24,7 +24,7 @@
 \usepackage[T1]{fontenc} 
 \usepackage{ucs}
 \usepackage[utf8]{inputenc}
-\usepackage[font=scriptsize]{caption}
+
 
 \usepackage{marvosym}
 \let\marvosymLightning\Lightning
@@ -545,7 +545,7 @@ Dann gilt\begin{enumerate}[label=(\alph*)]
 \item $X\xlongequal{\mc{D}}F\inv(\mc{U}),$\ d.h.\ \ $\mc{L}(X)=\lambda |_{(0,1)}\circ (F\inv)^{-1}$\\
 Für $h\in\mc{L}(P(X))$ gilt $\int hdP(X)=\int\limits_0^1h\circ F\inv d\lambda$
 \item Ist F stetig, so gilt\\
-$F(X)=\mc{U}, d.h. \mc{L}(F(\lambda))=\lambda|_{(0,1)}$\\
+$F(X)=\mc{U},\;  \text{d.h.} \; \mc{L}(F(\lambda))=\lambda|_{(0,1)}$\\
 Ist $g\in\lp{1}(\lambda|_{(0,1)})$, so gilt\\
 $\int\limits_0^1gd\lambda=\int g\circ F dP(X)$
 \end{enumerate}
@@ -566,7 +566,7 @@ Seien $\folge{X}{n},\ X:\raum\ra\rbor$ Zufallsvariablen mit Verteilungsfunktione
 $S(F_X)=\brac{t\in\R:F_X(t)\text{ ist stetig in }t}.$\\
 Dann sind äquivalent\begin{enumerate}[label=(\alph*)]
 \item $X_n\xr[n\toinf]{d}X$
-\item $F_{X_n}(tr)\xr[n\toinf]{}F_X(t)\ \forall t\in S(F_X)$
+\item $F_{X_n}(t)\xr[n\toinf]{}F_X(t)\ \forall t\in S(F_X)$
 \item $\exists D\subseteq\R$ dicht so, dass\\
 $F_{X_n}(t)\xr[n\toinf]{}F_X(t)\forall t\in D$
 \end{enumerate}
@@ -594,7 +594,7 @@ $X_n\xr[n\toinf]{f.s.}X\Ra X_n\xr{d}X$\QED
 
 \subsection{Satz (Skorohod)}
 \label{3.9}
-Seien $\folge{X}{n},X$ Zufallsvariablen mit Verteilungsfunktionen $F_{X-n}(t)\ra F_X(t)\forall t\in S(F_X).$ Dann existiert ein Wahrscheinlichkeitsraum $(\widehat\Omega,\widehat\f,\widehat P)$ und Zufallsvariablen $\widehat X_n, \widehat X:(\widehat\Omega,\widehat\f,\widehat P)\ra\rbor$ mit \begin{enumerate}[label=(\alph*)]
+Seien $\folge{X}{n},X$ Zufallsvariablen mit Verteilungsfunktionen $F_{X_n}(t)\ra F_X(t)\; \forall t\in S(F_X).$ Dann existiert ein Wahrscheinlichkeitsraum $(\widehat\Omega,\widehat\f,\widehat P)$ und Zufallsvariablen $\widehat X_n, \widehat X:(\widehat\Omega,\widehat\f,\widehat P)\ra\rbor$ mit \begin{enumerate}[label=(\alph*)]
 \item $\mc{L}(\widehat X_n)=\mc{L}(X_n), \fn, \mc{L}(\widehat X)=\mc{L}(X)$
 \item $\widehat X_n\xr{n\toinf}\widehat X\ \widehat P$-f.s.
 \end{enumerate}
@@ -603,7 +603,7 @@ Wir zeigen zunächst:
 \subsection{Lemma}
 \label{3.10}
 Seien $\folge[\N_0]{F}{n}$ Verteilungsfunktionen mit\\
-\[F_n(t)\ra F_0(t) \forall t\in s(F_0)\]\\
+\[F_n(t)\ra F_0(t) \forall t\in S(F_0)\]\\
 Dann gilt\\
 \[F_n\inv(t)\ra F_0\inv(t) \forall t\in S(F_0\inv)\cap(0,1)\]
 
@@ -674,7 +674,7 @@ $|E(f(X_n)-f(Y_n))|\leq E(|f(X_n)-f(Y_n)|*(\1{\brac{\norm{X_n-Y_n}\\
 
 \subsection{Beispiel}
 \label{3.13}
-Seien $\folge{X}{n}\sim N(0,1)$ iid. Dann folgt\\
+Seien $\folge{X}{n}\sim N(0,1)$ i.i.d.. Dann folgt\\
 $T_n=\dfrac{X_0}{\sqrt{\dfrac{1}{n}\sm[n]{i=1}X_i^2}}$ eine $t_n$-Verteilung.\\
 Nach dem starken Gesetz der großen Zahlen gilt $\dfrac{1}{n}\sm[n]{i=1}X_i^2\xr[f.s.]{n\toinf}1$\\
 Mit Slutzky folgt $T_n\xr{d}\dfrac{X_0}{1}\sim N(0,1)$
@@ -739,9 +739,9 @@ $\varphi_{aX+b}(t)=e^{ibt}\varphi_X(at)$
 \item $\varphi_{-X}=\overline{\varphi_X}$
 \item \begin{enumerate}
 \item Sei $\vartheta$ ein weiteres Wahrscheinlichkeitsmaß auf $\R$:\\
-$\widehat{\mu*\vartheta}=\widehat\mu*\widehat\vartheta$
+$\widehat{\mu*\vartheta}=\widehat\mu \widehat\vartheta$
 \item Seien $X_1, X_2:\Omega\ra\R$ unabhängige Zufallsvariablen:\\
-$\varphi_{X_1+X_2}(t)=\varphi_{X_1}(t)Y_{X_2}(t)$
+$\varphi_{X_1+X_2}(t)=\varphi_{X_1}(t)\varphi_{X_2}(t)$
 \end{enumerate}
 \item $\widehat{\mu}$ ist positiv semidefinit, d.h. $\forall x_i\in\R, \lambda_i\in\C, n\in\N$ gilt \\
 $\sm[n]{j,l=1} \lambda_j\overline{\lambda_l}\widehat{\mu}(x_j-x_l)\geq0$.
@@ -909,7 +909,7 @@ $\varphi_{X_n+Y_n}=\varphi_{X_n}\varphi_{Y_n}\xr{pktweise}\varphi_{X_0}\varphi_{
 \label{4.12}
 Sei $\mu$ ein Wahrscheinlichkeitsmaß auf $\rbor[]$ mit $\intr|\widehat{\mu}(x)|dx<\infty$\\
 Dann ist $\mu$ absolutstetig (bzgl. des Lebesguemaßes) mit stetiger und beschränkter Dichte\\
-$f(t)=\intr\dfrac{1}{2\pi}e^{-ixt}\widehat{\mu}(x)e^{-\dfrac{a^2x^2}{2}}dx$\\
+$f(t)=\intr\dfrac{1}{2\pi}e^{-ixt}\widehat{\mu}(x)dx$\\
 \beweis
 Aus dem Beweis von \hyperref[4.5]{Satz 4.5} wissen wir, dass $N(0,a^2)*\mu$ die Dichte\\
 $f_a(t)=\dfrac{1}{2\pi}\intr e^{-ixt}\widehat{\mu}(x)e^{-\dfrac{a^2x^2}{2}}dx$ hat (für $a>0$)\\
@@ -968,7 +968,7 @@ Existiert die Laplacetransformierte in einer Nullumgebung, so sind alle Momente 
 \pagebreak
 \section{Zentrale Grenzwertsätze}
 \marginpar{9. Vorlesung, 15.05.2018}
-Sei $\folge{X}{i}$ eine iid (independent identically distributed) Folge von Zufallsvariablen mit $X_1\in\lp{2}$.\\
+Sei $\folge{X}{i}$ eine i.i.d. (independent identically distributed) Folge von Zufallsvariablen mit $X_1\in\lp{2}$.\\
 Setze  $\mu=E(X_1), \sigma^2=Var(X_1)$.\\
 Wir nehmen von nun an an $\sigma^2>0$.\\
 Für $n\in\N$ definieren wir\\
@@ -1034,7 +1034,7 @@ $Var(X_{nl})\leq E(X_{nl}^2)=E(X_{nl}\1{\brac{|X_{nl]\leq\varepsilon}}})+E(X_{nl
 
 \subsection{Lemma}
 \label{5.6}
-Sei $\folge{X}{i}$ eine Folge von iid Zufallsvariablen in $\lp{2}$ mit $Var(X_1)>0$. Dann erfüllt das Dreiecksschema\\
+Sei $\folge{X}{i}$ eine Folge von i.i.d. Zufallsvariablen in $\lp{2}$ mit $Var(X_1)>0$. Dann erfüllt das Dreiecksschema\\
 \[X_{nl}=\dfrac{X_l-E(X_1)}{\sqrt{n}}\]
 die Voraussetzungen von \hyperref[5.4]{Satz 5.4.}\\
 \beweis
@@ -1049,7 +1049,7 @@ $L_n(\varepsilon)=\dfrac{1}{n}\sm[n]{l=1}E\brc{X_l^2\1{\brac{|X_l|>\varepsilon\s
 \subsection{Lemma (Lyapunov-Bedingung)}
 \label{5.7}
 Sei $X_{nl}$ ein Dreiecksschema von Zufallsvariablen. Existiert ein $\delta>0$ mit $X_{nl}\in\lp{2+\delta}\forall n,l$ und gilt\\
-$\sm[n]{l=1}E\brc{|X_{nl}^{2+\delta}}\xr{n\toinf}0$, dann erfüllt das Dreiecksschema die \hyperref[5.4]{Lindebergbedingung}.\\
+$\sm[n]{l=1}E\brc{\vert X_{nl}\vert^{2+\delta}}\xr{n\toinf}0$, dann erfüllt das Dreiecksschema die \hyperref[5.4]{Lindebergbedingung}.\\
 \beweis
 Sei $\varepsilon>0$.\\
 $L_n(\varepsilon)=\sm[n]{l=1}E(X_{nl}^2\underbrace{\varepsilon^\delta}_{<|X_{nl}|^\delta}\varepsilon^{-\delta}\1{\brac{|X_{n1}|>\varepsilon}}\leq\varepsilon^{-\delta}\sm[n]{l=1}E\brc{|X_{nl}|^{2+\delta}}\xr{n\toinf}0$
@@ -1071,13 +1071,13 @@ Dann gilt $Var\brc{\sm[n]{l=1}X_{nl}}\ra 0$ und mit \tscheb folgt $\sm[n]{l=1}X_
 \subsection{Beispiel (Rekorde)}
 \marginpar{10.Vorlesung, 17.05.2018} 
 \label{5.9}
-Sei $\folge{X}{i}$ eine iid Folge von Zufallsvariablen mit $\mc{L}(X_1)$ stetig.\\
+Sei $\folge{X}{i}$ eine i.i.d. Folge von Zufallsvariablen mit $\mc{L}(X_1)$ stetig.\\
 \[A_n:=\brac{\max\limits_{1\leq l\leq n-1}X_l<X_n}\quad \widehat{=}\text{neuer Rekord zur Zeit n})(A_1=\Omega)\]\\
 Dann gilt für $R_n=\sm[n]{i=1}1_(A_i)$\[
 T_n=\dfrac{R_n-ln(n)}{\sqrt{ln(n)}}\xr{d}N(0,1)
 \]
 \beweis
-Aus der Stetigkeit von $X_i$ und $X_i$ iid folgt $P(A_n)=\dfrac{1}{n}$ (unter den ersten n Zufallsvariablen wird das Maximum an den Stellen $1,...,n$ mit der gleichen Wahrscheinlichkeit angenommen)\\
+Aus der Stetigkeit von $X_i$ und $X_i$ i.i.d. folgt $P(A_n)=\dfrac{1}{n}$ (unter den ersten n Zufallsvariablen wird das Maximum an den Stellen $1,...,n$ mit der gleichen Wahrscheinlichkeit angenommen)\\
 $\Ra 1_(A_n)\sim$ Bernoulli$\brc{\dfrac{1}{n}}$\\
 Für $i<j$ gilt $P(A_i\cap A_j)=P(A_i|A_j)P(A_j)=\dfrac{1}{ij}$\\
 Induktiv folgt $\brc{1_{A_n}}_{n\in\N}$ sind unabhängig.\[
@@ -1098,7 +1098,7 @@ $\bullet\qquad\dfrac{\sm[n]{l=1}\dfrac{1}{l}-log(n)}{\sqrt{log(n)}}\ra 0\text{, 
 \subsection{Satz (Lindeberg-Feller multivariat)}
 \label{5.10}
 Sei $X_{nl}:\raum\rbor$ ein Dreiecksschema zeilenweise unabhängiger Zufallsvektoren mit $X_{nl}\in\lp{2}\quad\forall n,l$. Setze $\Sigma_{nl}=Cov(X_{nl})$ \ ($d\times d$ symmetrische strikt positiv definite Matrix). Wenn\begin{enumerate}[label=(\alph*)]
-\item $\sm[n]{l=1}E(X_{nl}=0\in\R^d$
+\item $\sm[n]{l=1}E(X_{nl})=0\in\R^d$
 \item $\sm[n]{l=1}\Sigma_{nl}\xr{n\toinf}\Sigma $($d\times d$ symmetrische strikt positiv definite Matrix)
 \item $L_n(\varepsilon):=\sm[n]{l=1}E\brc{\norm{X{nl}}^2\1{\norm{X_{nl}}>\varepsilon}}\xr{n\toinf}0\quad\forall\varepsilon>0$
 \end{enumerate}
@@ -1122,14 +1122,14 @@ Lässt man auch degenerierte Normalverteilungen zu (definiert über die charakte
 
 \subsection{Korollar}
 \label{5.12}
-Seien $\folge{X}{i}$ iid Zufallsvariablen mit $E(X_1)=\mu$ und $Cov(X_1)=\Sigma\in M_d(\R)$ symmetrisch strikt positiv definit.\\
+Seien $\folge{X}{i}$ i.i.d. Zufallsvariablen mit $E(X_1)=\mu$ und $Cov(X_1)=\Sigma\in M_d(\R)$ symmetrisch strikt positiv definit.\\
 Dann gilt:\\
 $\dfrac{1}{\sqrt{n}}\sm[n]{i=1}{X_i-\mu}\xr{d}Y\sim N_d(0,\Sigma).$\\
-Eine weitere wichtige Aussage über das Wachstumsverhalten von iid Partialsummen üver iid Zufallsvariablen gibt der folgende Satz
+Eine weitere wichtige Aussage über das Wachstumsverhalten von i.i.d. Partialsummen üver i.i.d. Zufallsvariablen gibt der folgende Satz
 
 \subsection{Satz (Gesetz vom iterierten Logarithmus)}
 \label{5.13}
-Sei $\folge{X}{n}$ eine iid Folge von Zufallsvariablen mit $E(X_1)=0$ und $Var(X_1)=1$.\\
+Sei $\folge{X}{n}$ eine i.i.d. Folge von Zufallsvariablen mit $E(X_1)=0$ und $Var(X_1)=1$.\\
 Dann gilt
 \[\lsup\dfrac{\sm[n]{i=1}X_i}{\sqrt{2nlog(log(n))}}=1\quad P-f.s.\]
 \[\linf\dfrac{\sm[n]{i=1}X_i}{\sqrt{2nlog(log(n))}}=-1\quad P-f.s.\]
@@ -1143,9 +1143,9 @@ Dann gilt
 \section{Bedingte Erwartungswerte}
 \marginpar{11.Vorlesung, 24.05.2018}
 Erinnerung an Elementare Wahrscheinlichkeitsrechnung und Statistik:\\
-Seien $X:\Omega\ra\R^n,\ Y_\Omega\ra\R^m$ Zufallsvariablen mit gemeinsamer Wahrscheinlichkeitsdichte $f:\R^n\times\R^m\ra\R^+$.\\
+Seien $X:\Omega\ra\R^n,\ Y:\Omega\ra\R^m$ Zufallsvariablen mit gemeinsamer Wahrscheinlichkeitsdichte $f:\R^n\times\R^m\ra\R^+$.\\
 Dann ist die bedingte Dichte\\
-$f_{X|Y}(x,y)=\dfrac{f(x,y)}{\int\limits_{\R^d}f(z,y)dz}$\\
+$f_{X|Y}(x,y)=\dfrac{f(x,y)}{\int\limits_{\R^n}f(z,y)dz}$\\
 (eine messbare Funktion in $(x,y)$)\\
 und die bedingte Erwartung von $X$ gegeben $Y=y$\\
 $E(X|Y=y)=\int\limits_{\R^m}xf_{X|Y}(x,y)dx$\\
@@ -1156,7 +1156,7 @@ eine Zufallsvariable (messbare Funktion in $\omega$).\\
 $E(X|Y)$ ist offenbar sogar $\sigma(Y)-\mc{B}(\R^n)$-messbar, also eine Zufallsvariable auf $(\Omega,\sigma(Y),P|_{\sigma(Y)})$.\\
 Sei $h:\R^m\ra\R$ messbar und beschränkt, $X\in\lp{1}(P)$, dann gilt\\
 $E(h(Y)E(X|Y))=\int\limits_{\R^m}h(y)\int\limits_{\R^n}x\dfrac{f(x,y)}{f_Y(y)}dxf_Y(y)dy\\
-=\int\limits_{\R^m}\int\limits_{\R^n}h(y)xf(x,y)dxdy=E(h(Y)|X)$
+=\int\limits_{\R^m}\int\limits_{\R^n}h(y)xf(x,y)dxdy=E(h(Y)X)$
 
 \subsection{Definition und Satz}
 \label{6.1}
@@ -1166,7 +1166,7 @@ Sei $X\in\lp{1}(P)$ oder $X\geq0$ und $\g\subseteq\f\quad\sigma-$Algebra.\begin{
 \item $E(X1_A)=E(Z1_A)\quad\forall A\in\g$
 \end{enumerate}
 Man nennt Z die bedingte Erwartung von X gegeben $\g$, i.Z. $Z=E(X|\g)$.
-\item $Z$ ist durch 1) und 2) f.s. eindeutig bestimmt.
+\item $Z$ ist durch (i) und (ii) f.s. eindeutig bestimmt.
 \end{enumerate}
 Seien $\mu,\nu$ zwei Maße auf $(\Omega,F)$.\\
 $\mu$ heißt absolutstetig bezüglich $\nu$, (i.Z. $\mu\ll\nu)$, wemm $\nu(A)=0\Ra\mu(A)=0$\\
@@ -1205,7 +1205,7 @@ Seien $X,Y:\raum\ra\rbor[]$ Zufallsvariablen mit $X,Y\in\lp{1}$ oder $X,Y\geq 0$
 \item $X=Y$ f.s. $\Ra E(X|\g)=E(Y|\g)$ f.s. und\\
  $X\leq Y$ f.s. $\Ra E(X|\g)\leq E(Y|\g)$ f.s.
 \item Ist $Y\ \g$-messbar und $XY\in\lp{1}$, dann gilt \\
-$E(XY|\g)=YE(X|\g)$ und $E(Y|\g)=Y=E(Y|\underbrace{Y}_{\sigma(Y)})$
+$E(XY|\g)=YE(X|\g)$ und $E(Y|\g)=Y=E(Y|\underbrace{Y}_{=\sigma(Y)})$
 \item Sind $\sigma(X)$ und $\g$ unabhängig, dann gilt \\
 $E(X|\g)=E(X)$. Insbesondere $E(X)=E(X|\brac{\emptyset,\Omega})$
 \item Bedingte Jensen-Ungleichung:
@@ -1282,7 +1282,7 @@ E((X-E(X|\g))\mc{U})\xlongequal{\hyperref[6.2]{6.2 e)}}E(X\mc{U})-E(E(X\mc{U}|\g
 \label{6.7}
 Sei $X\geq 0$ oder $X\in\lp{1}(P)$ und $Y:\Omega\ra(\Omega_Y,\f_Y)$ messbar ($\Omega_1$-wertige Zufallsvariable). Dann gibt es eine messbare Funktion $f_x:(\Omega_Y,\f_Y)\ra(\overline{\R},B(\overline{\R}))$ mit $E(X|Y)=f_X(Y)$.\\
 Die Funktion $f_X$ ist P-f.s. eindeutig und \[
-\int\limits_AfdP^Y=\int\limits_{Y^{-1}}(A)XdP\qf A\in\f_Y\]
+\int\limits_Af dP^Y=\int\limits_{Y^{-1}(A)}XdP\qf A\in\f_Y\]
 Man schreibt $f(y)=E(X|Y=y)\qf y\in\Omega_Y$ und nennt $f(y)$ den bedingten Erwartungswert von $X$ unter $Y=y$\\
 \beweis
 ausgelassen (auch in der Vorlesung)\QED
@@ -1291,14 +1291,14 @@ ausgelassen (auch in der Vorlesung)\QED
 
 
 \section{Bedingte Verteilungen}
-Für Zufallsvariablen $X,Y$ wollen wir sinnvoll bedingte Wahrscheinlichkeitsmaße $P(X\in\cdot|Y=y)$ erklären.
+Für Zufallsvariablen $X,Y$ wollen wir sinnvoll bedingte Wahrscheinlichkeitsmaße $P(X\in\cdot\;|Y=y)$ erklären.
 
 \subsection{Definition}
 \label{7.1}
 Seien $(\Omega_1,\f_1),(\Omega_2,\f_2)$ messbare Räume. Eine Abbildung\\
 $K:\Omega_1\times\f_2\ra [0,1]$ heißt \underline{stochastischer Kern} (oder Markovkern) von $\Omega_1$ nach $\Omega_2$, falls\begin{enumerate}[label=(\roman*)]
 \item $A_2\mapsto K(\omega_1,A_2)$ ist ein Wahrscheinlichkeitsmaß auf $(\Omega_2,\f_2)\qf\omega_1\in\Omega_2$
-\item $\omega_1\mapsto k(\omega_1,A_2)$ ist messbar $\forall A_2\in\f_2$.
+\item $\omega_1\mapsto K(\omega_1,A_2)$ ist messbar $\forall A_2\in\f_2$.
 \end{enumerate}
 Interpretation als zweistufiges Zufallsexperiment:\begin{enumerate}
 \item Ziehe $\omega_1\in\Omega_1$ mit Wahrscheinlichkeitsmaß $P_1$ auf $(\Omega_1,\f_1)$
@@ -1353,7 +1353,7 @@ Zufallsvariablen. Wir wollen die gemeinsame Verteilung $P^{(Y,Z)}$ von $(Y,Z)$ a
 Eine Abbildung $K:\Omega_Y\times\f_Z\ra\R$ heißt (\underline{reguläre})\underline{bedingte Verteilung} von $Z$ unter $Y=y$, falls $K$ ein Kern ist und $P^{(Y,Z)}=P^Y\times K$, d.h. falls\begin{enumerate}[label=(\roman*)]
 \item $y\mapsto K(y,A)$ ist messbar $\forall A\in\f_Z$
 \item $A\mapsto K(y,A)$ ist ein Wahrscheinlichkeitsmaß auf $(\Omega_Z,\f_Z)\qf y\in\Omega_y$
-\item $P(y\in B,Z\in A)=\int\limits_BK(y,A)dP^Y(y)\qf A\in\f_2,B\in\f_Y$
+\item $P(Y\in B,Z\in A)=\int\limits_BK(y,A)dP^Y(y)\qf A\in\f_Z,B\in\f_Y$
 \end{enumerate}
 Wir schreiben $P^{Z|Y=y}(A)$ für $K(y,A)$.
 
@@ -1368,9 +1368,9 @@ Dann gilt\begin{equation}
 E(g(Y,Z)|Y)=\int\limits_{\Omega_Z}g(Y,z)K(Y,dz)
 \end{equation}
 Für $z\geq0$ oder $Z\in\lp{1}$ gilt also \[
-E(Z|Y)=\int\limits_{\Omega_2}g(Y,z)K(Y,dz)\]
+E(Z|Y)=\int\limits_{\Omega_Z}g(Y,z)K(Y,dz)\]
 Genauso macht es jetzt Sinn \[
-E(g(Y,Z)|Y=y)=\int\limits_{Omega_Z}g(y,z)K(y,dz)\]
+E(g(Y,Z)|Y=y)=\int\limits_{\Omega_Z}g(y,z)K(y,dz)\]
 zu betrachten.\\
 \beweis
 Rechte Seite von (1) ist $\sigma(Y)$-messbar. Sei $B\in\sigma(Y)\\
@@ -1428,7 +1428,7 @@ Sei $\raum$ SE und $D$ eine Menge (\underline{Entscheidungsraum}).\begin{enumera
 \item Sei $\mc{D}$ eine $\sigma$-Algebra auf $D$. Dann heißt eine messbare Abbildung $T:(\Omega,\f)\ra(D,\mc{D})$ \underline{(Punkt)schätzer}
 \item Sei $D\subseteq\R^d$. Ein Punktschätzer T heißt \underline{erwartungstreu/unverzerrt/unbiased} für ein statischtisches Funktional $g$, falls $T\in\lp{1}(P_\vartheta)\qf \vartheta\in\theta$ und $E_\vartheta(T)=E_{P_\vartheta}(T)=g(\vartheta)=g(P_\vartheta)$
 \item Für einen integrierbaren Punktschätzer $T$ heißt \[
-Bias_\vartheta(T)=:=E_\vartheta(T)-g(\vartheta)\]
+Bias_\vartheta(T):=E_\vartheta(T)-g(\vartheta)\]
 \underline{der Bias/die Verzerrung} von $T$ in $\vartheta$.\\
 Für (quadratintegrierbare) Schätzer heißt \[
 MSE_\vartheta(T):=E_\vartheta(\norm{T-g(\vartheta)}^2)\]
@@ -1458,7 +1458,7 @@ A\mapsto\tilde{\mu}(A):=\sm{i=1}\dfrac{\mu(A\cap E_i)}{2^i\mu(E_i)}\]
 \item Man kann sogar zeigen: \\
 Ist $\p\ll\mu, \mu\ \sigma$-endlich, so existiert eine Folge $\folge{P}{n}$ in $\p$ mit \[
 \p\ll\sm{n=1}\dfrac{P_n}{2^n}\]
-\item Gilt für $\p_i:=\brac{P_{i,\vartheta}:\vartheta\in\theta_i}$ f+r i=1,2 \\
+\item Gilt für $\p_i:=\brac{P_{i,\vartheta}:\vartheta\in\theta_i}$ für i=1,2 \\
 $\p_i\ll\mu_i$ mit $\mu_i\ \sigma$-endlich\\
 So gilt auch\[
 \p_1\otimes\p_2:=\brac{P_{1,\vartheta_1}\otimes P_{2,\vartheta_2}:\vartheta\in\theta_i}\ll\mu_1\otimes\mu_2\]
@@ -1477,8 +1477,8 @@ $\mu*\lambda(A)=\int \lambda(A-y)d\mu(y)=\lambda(A)\underbrace{\int d\mu(y)}_{=1
 \end{enumerate}
 
 \section{Suffizienz}
-$X_1,...,X_n$ seien Realisierungen unabhängiger Versuchswiederholungen nach einer unbekannten Verteilung P auf $(\Omega,\f)$.\\
-$n$-faches Produktmodell: $\p=\brac{P_\vartheta^\stuff:\vartheta\in\Theta}$.\\
+$X_1,...,X_n$ seien Realisierungen unabhängiger Versuchswiederholungen nach einer unbekannten Verteilung P auf $(\Omega,F)$.\\
+n-faches Produktmodell: $\p=\brac{P_\vartheta^\stuff:\vartheta\in\theta}$.\\
 Häufig besitzen Teile der Daten $X_1,...,X_n$ keine zusätzliche Information über das wahre $\vartheta$!\\
 \textbf{Ziel:} \begin{list}{•}{}
 \item Transformation der Daten ohne Informationsverlust
@@ -1488,7 +1488,7 @@ Sei zum Beispiel\\
 $T:(\Omega^n,\f^\stuff)\ra(\Omega_T,\f_T)$ (polnisch) eine Transformation.\\
 Wenn die bedingte Verteilung ($P\in\p$ unbekannt)
 \[(P_\vartheta^\stuff)^{id|T=t}\]
-für alle $t$ unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,...,X_n)$ alle Informationen der Daten über $\theta$ enthalten.
+für alle t unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,...,X_n)$ alle Informationen der Daten über $\theta$ enthalten.
 
 \subsection{Beispiele}
 \label{10.1}
@@ -1496,10 +1496,10 @@ für alle $t$ unabhängig von $\vartheta\in\theta$ wählbar ist, sollte $T(X_1,.
 \item Betrachte $\brc{\brac{0,1}^n,\p(\brac{0,1}^n), Binom(1,\vartheta)^\stuff}$.\\
 Dann sollte die Komprimierung\\
 $T:(x_1,...,x_n)\mapsto\sm[n]{i=1}x_i$ ohne Informationsverlust sein.\\
-Es gilt $\forall 0\leq K\leq n$ und $\forall\brac{x_1,...,x_n}\in\brac{0,1}^n$ mit $\sm[n]{i=1}x_i=K:\\
-P_\vartheta^n((x_1,...,x_n)|T=K)=\dfrac{\prod\limits_{i=1}^n\vartheta^{x_i}(1-\vartheta)^{1-x_i}}{\mat{n\\K}\vartheta^K(1-\vartheta)^{n-K}}=\mat{n\\K}^{-1}$,\\
-was nicht von $\vartheta$ abhängt.
-\item Gegeben sei ein Produktmodell $(\Omega^n,\f^\stuff, (P_\vartheta^\stuff)_{\vartheta\in\Theta})$\\
+Es gilt $\forall 0\leq k\leq n$ und $\forall\brac{x_1,...,x_n}+\brac{0,1}^n$ mit $\sm[n]{i=1}X_i=K:\\
+P_\vartheta^n((x_1,...,x_n)|T=K)=\dfrac{\prod\limits_{i=1}^n\vartheta^{x_i}(1-\vartheta)^{1-x_i}}{\mat{n\\K}\vartheta^K(1-\vartheta)^{n-K}}=\mat{n\\K}^{-1}$\\
+Was nicht von $\vartheta$ abhängt.
+\item Gegeben sei ein Produktmodell $(\Omega^n,\f^\stuff, (P_\vartheta^\stuff)_{\vartheta\in\theta})$\\
 Dann sollte die Reihenfolge der Beobachtungen irrelevant sein.\\ Insbesondere sollten die Ordnungsstatistiken dieselben Informationen beinhalten wie die Daten. In der Tat kann man zeigen (siehe Skript Pauly)\\
 $P_\vartheta^{\stuff\  id|(x_{(1)},...,x_{(n)})=(y_1,...,y_n)}$\\
 hängt nicht von $\vartheta$ ab.\\
@@ -1509,23 +1509,23 @@ Da bedingte Verteilungen nicht immer existieren müssen, nutzen wir für die all
 \subsection{Definition}
 \label{10.2}
 Sei $(\Omega,\f,\p)$ ein statistisches Experiment.\begin{enumerate}[label=(\alph*)]
-\item Eine \underline{Teil-$\sigma$-Algebra} $\tau\subseteq\f$ heißt \underline{suffizient für $\p$}, (bzw. $\vartheta$), falls für alle $A\subset\f$ eine von $\vartheta$ unabhängige Version $E_\bullet(1_A|\tau)$ des bedingten Erwartungswertes $E_{P_\vartheta}(1_A|\tau)$ existiert.
+\item Eine \underline{Teil-$\sigma$-Algebra} $\tau\subseteq\f$ heißt \underline{suffizient für $\p$}, (bzw. $\vartheta$), falls für alle $A\in\f$ eine von $\vartheta$ unabhängige Version $E_\bullet(1_a|\tau)$ des bedingten Erwartungswertes $E_{P_\vartheta}(1_A|\tau)$ existiert
 \item Sei $T:(\Omega,\f)\ra(\Omega',\f')$ eine Statistik.\\
 T heißt \underline{suffizient für $\p$}, falls $\tau=T^{-1}(\f')(=\sigma(T))$ suffizient ist.\\
 \end{enumerate}
 
 \textbf{Interpretation:}
 Wir werden sehen:\begin{enumerate}
-\item Bei der Suffizienz enhält das SE $(\Omega, \tau, \brac{P_{\vartheta|\tau}}_{\vartheta\in\Theta})$ \\genau soviel Information über $\vartheta$ wie das Ausgangsexperiment.
-\item Die Reduktion der Daten wird einen Effizienzgewinn (niedrigere Varianz) mit sich bringen.
+\item Bei der Suffizienz enhält das SE $(\Omega, \tau, \brac{P_{\vartheta|\tau}}_{\vartheta\in\theta})$ \\genau soviel Information über $\vartheta$ wie das Ausgangsexperiment
+\item Die Reduktion der Daten wird einen Effizienzgewinn (niedrigere Varianz) mit sich bringen
 \end{enumerate}
-D. h. Suffizienz ist sozusagen \glqq Datenredutkion ohne Informationsverlust\grqq.
+d.h. Suffizienz ist sozusagen \glqq Datenredutkion ohne Informationsverlust \grqq.
 
 
 \subsection{Lemma}
 \label{10.3}
-Sei $X$ eine Statistik auf $(\Omega,\f),\ X\in\lp{1}(P_\vartheta)\quad \forall\vartheta\in\Theta$ und $\tau\subseteq\f$ suffizient.\\
-Dann existiert eine Version $E_\bullet(X|\tau)$ von $E_{P_\vartheta}(X|\tau)$, die unabhängig von $\vartheta$ ist.\\
+Sei $X$ eine Statistik auf $(\Omega,\f),\ X\in\lp{1}(P_\vartheta)\quad \forall\vartheta\in\theta$ und $\tau\subseteq\f$ suffizient.\\
+Dann existiert eine Version $E_\bullet(X|\tau)$ von $E_{P_\vartheta}(X|\tau)$ die unabhängig von $\vartheta$ ist.\\
 \beweis
 Offensichtlich für $X=1_A\quad\forall A\in\f$. Dann maßtheoretische Induktion.\QED
 
@@ -1534,22 +1534,22 @@ Offensichtlich für $X=1_A\quad\forall A\in\f$. Dann maßtheoretische Induktion.
 \begin{list}{•}{}
 \item Ist $T^{-1}(\f')=\f$, so ist $T$ suffizient.
 \item $\tau=\brac{\emptyset,\Omega}:$ Suffizienz hieße $E_\vartheta(1_A|\tau)=P_\vartheta(A)\quad\forall A\in\f$ wäre unabhängig von $\vartheta$. Das ist nur in trivialen Fällen möglich.
-$\Ra$ suffiziente $\sigma$-Algebren/Statistiken können nicht \glqq zu klein\grqq\ sein.
+$\Ra$ suffiziente $\sigma$-Algebren/Statistiken können nicht \glqq zu klein\grqq\ sein
 \end{list}
 
 \subsection{Lemma}
 \label{10.5} Sei $(\Omega,\f,\p)$ ein statistisches Experiment.\begin{enumerate}[label=(\alph*)]
 \item T ist suffizient $\LRa \forall A\in\f$ existiert eine von $P_\vartheta$ unabhängige Version $E_\bullet(1_A|T=\cdot)$ von $E_{P_\vartheta}(1_A|T=\cdot).$
 \item Existiert eine von $P_\vartheta\in\p$ unabhängige Version \\
-$K(t,\cdot)=P^{id|T=t}$,\\
+$K(t,\cdot)=P^{id|T=t}$\\
 so ist T suffizient für $\p$.
 \end{enumerate}
 
 \subsection{Satz (Rao-Blackwell)}
 \label{10.6}
-Sei $(\Omega,\f,\p)$ ein SE und $S$ ein erwartungstreuer Schätzer für $g(\vartheta)$. Weiter sei $\tau$ suffizient und $h:=E_\bullet(S|\tau)$. Dann gilt:\begin{enumerate}[label=(\roman*)]
-\item $h$ ist $\tau$-messbarer erwartungstreuer Schätzer für $g(\nu)$
-\item $MSE_\vartheta(h)=Var_\vartheta(h)\leq Var_\vartheta(S)=MSE_\vartheta(S)\qf\vartheta\in\Theta$ mit \grqq$=$\grqq, falls \\
+Sei $(\Omega,\f,\p)$ ein SE und S ein erwartungstreuer Schätzer für $g(\vartheta)$. Weiter sei $\tau$ suffizient und $h:=E_\bullet(S|\tau)$. Dann gilt:\begin{enumerate}[label=(\roman*)]
+\item h ist $\tau$-messbarer erwartungstreuer Schätzer für $g(\vartheta)$
+\item $MSE_\vartheta(h)=Var_\vartheta(h)\leq Var_\vartheta(S)=MSE_\vartheta(S)\qf\vartheta\in\theta$ mit \grqq$=$\grqq, falls \\
 $E_\vartheta(S|\tau)=S P_\vartheta-f.s.\forall\vartheta$\\
 \beweis
 \hyperref[6.2]{Bedingte Jensensche Ungleichung}\QED
@@ -1565,7 +1565,7 @@ Sei $(\Omega,\f,\p)$ ein statistisches Experiment, $\p\ll\mu$ mit $\mu\ \sigma$-
 \subsection{Bemerkung}
 \label{10.8}
 \marginpar{16.Vorlesung, 18.06.2018}
-Es genügt in b) $\dfrac{dP}{d\mu}=g_P\circ T$ zu fordern (ersetzte $\mu$ durch $\widehat{\mu}$ mit $\widehat{\mu}(A)=\int\limits_Ahd\mu$).\\
+Es genügt in b) $\dfrac{dP}{d\mu}=g_P\circ T$ zu fordern (ersetzte $\mu$ durch $\widehat{\mu}$ mit $\widehat{\mu}(A)=\int\limits_Ahd\mu$\\
 \beweis
 Wir zeigen nur den diskreten Fall.\\
 \glqq $\Ra$ \grqq $\forall x\in\Omega,\ \forall P\in\p\ \exists$ Funktionen $f_x$ mit \[
@@ -1597,7 +1597,7 @@ Sei $(\Omega,\f,\p)$ SE, $\p\ll\mu,\ \mu\ \sigma$-endlich und $\tau\subseteq\f\ 
 \label{10.10}
 Sei $(\Omega,\f,\p)$ SE, $\p\ll\mu, \mu\ \sigma$-endlich und $\tau$ eine suffiziente $\sigma$-Algebra. Dann ist jede $\sigma$-Algebra $\tau'$ mit $\tau\subseteq\tau'\subseteq\f$ ebenfalls suffizient.\\
 \beweis
-In Korollar 10.9 ist $f_p\ \tau$- und damit $\tau'$-messbar.\QED
+In Korollar 10.9 ist $f_p\ \tau$- und damit $\tau'$-mmessbar.\QED
 
 \subsection{Korollar}
 \label{10.11}
@@ -1606,7 +1606,7 @@ Dann ist $\tau_1\otimes\tau_2=\sigma(\tau_1\times\tau_2)$ suffizient für \\
 $\p_1\otimes\p_2:=\brac{P_1\otimes P_2:P_i\in\p_i, i=1,2}$.\\
 \beweis
 \[\dfrac{dP_1\otimes P_2}{d\mu_1\otimes\mu_2}(x,y)=\dfrac{dP_1}{d\mu_1}(x)\dfrac{dP_2}{d\mu_2}(y)=\underbrace{\overbrace{f_{P_1}(x)}^{\tau_1-messbar}\overbrace{f_{P_2}(y)}^{\tau_2-messbar}}_{\tau_1\otimes\tau_2-messbar}\cdot\underbrace{h_1(x)h_2(y)}_{h(x,y)}\]
-Mit Korollar 10.9 folgt die Behauptung.\QED
+Mit Korollar 10.9 folgt die Behauptung\QED
 
 \subsection{Korollar}
 \label{10.12}
@@ -1617,10 +1617,10 @@ Folgt aus Korollar 10.11, da $\sigma(T)\supseteq\sigma(f\circ T)$.\QED
 
 \subsection{Definition}
 \label{10.13}
-Sei $(\Omega,\f,\p)$ ein SE. $\p=\brac{P_\vartheta:\vartheta\in\Theta}$ heißt \underline{Exponentialfamilie}, falls $\mu\ \sigma$-endlich existiert mit $\p\ll\mu$ und es Funktionen $g_1,...,g_k:\Theta\ra\R$ für $k\in\N$ sowie Statistiken $T_1,...,T_k:\Omega\ra\R$ gibt mit \[
-\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x),\hfill(10.4)\]
+Sei $(\Omega,\f,\p)$ ein SE. $\p=\brac{P_\vartheta:\vartheta\in\theta}$ heißt \underline{Exponentialfamilie}, falls $\mu\ \sigma$-endlich existiert mit $\p\ll\mu$ und es Funktionen $g_1,...,g_k:\theta\ra\R$ für $k\in\N$ sowie Statistiken $T_1,...,T_k:\Omega\ra\R$ gibt mit \[
+\dfrac{dP_\vartheta}{d\mu}=C(\vartheta)\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)\hfill(10.4)\]
 wobei $h:\Omega\ra\R$ messbar und\[
-C(\vartheta)=\brc{\int\limits_\Omega\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)d\mu(x)}^{-1}.\]
+C(\vartheta)=\brc{\int\limits_\Omega\exp\brc{\sm[k]{i=1}g_i(\vartheta)T_i(x)}h(x)d\mu(x)}^{-1}\]
 
 \subsection{Satz}
 \label{10.14}
@@ -1628,25 +1628,25 @@ Für eine Exponentialfamilie $\p$ wie in (10.4) ist $(T_1,T_2,...,T_k)$ eine suf
 \beweis
 Nutze \hyperref[10.7]{Theorem 10.7} mit $\\
 g_P:\R^k\ra\R\\
-(x_1,...,x_n)\mapsto\exp\brc{\sm[k]{i=1}g_i(\vartheta)x_i}$.\QED
+(x_1,...,x_n)\mapsto\exp\brc{\sm[k]{i=1}g_i(\vartheta)x_i}$\QED
 
 \subsection{Beispiel (Suffizienz und Exponentialfamilien)}
 \label{10.15}
 \begin{enumerate}[label=(\alph*)]
-\item $\Theta\subset(0,1), P_\vartheta=Binom(n,\vartheta), \mu=\sm[]{n\in\N_0}\delta_n$ (Zählmaß).\\
+\item $\theta\in(0,1), P_\vartheta=Binom(n,\vartheta), \mu=\sm[]{n\in\N_0}\delta_n$ (Zählmaß)\\
 Dann gilt
 \begin{align}
-P_\vartheta(\brac{x}) & = \mat{n\\k}\vartheta^x(1-\vartheta)^{n-x}1_{\brac{0,...,n}}(x)\\
-& = \underbrace{(1-\vartheta) ^n}_{C(\vartheta)}\exp\bigg(\underbrace{x}_{T_1(x)}\underbrace{\log\dfrac{\vartheta}{1-\vartheta}}_{g_1(\vartheta)}\bigg)\underbrace{\mat{n\\x}1_{\brac{0,...,n}}(x)}_{h(x)}.
+P_\vartheta(\brac{x}) & = \mat{n\\x}\vartheta^x(1-\vartheta)^{n-x}1_{\brac{0,...,n}}(x)\\
+& = \underbrace{(1-\vartheta) ^n}_{C(\vartheta)}\exp\bigg(\underbrace{x}_{T_1(x)}\underbrace{log\dfrac{\vartheta}{1-\vartheta}}_{g_1(\vartheta)}\bigg)\underbrace{\mat{n\\x}1_{\brac{0,...,n}}(x)}_{h(x)}
 \end{align}
-Somit liegt eine Exponentialfamilie vor und $T(x)=x$ ist suffizient für $\p=\brac{Binom(n,\vartheta:\vartheta\in(0,1)}$.
-\item Offensichtlich sind Produkte von Exponentialfamilien wieder\\ Exponentialfamilien, z.B. betrachte a) mit $n=1, \Theta=(0,1)$, und davon das $N$-fache Produktexperiment. Dann gilt: $P_\vartheta=Binom(1,\vartheta)^{\otimes N}\\
+Somit liegt eine Exponentialfamilie vor und $T(x)=x$ ist suffizient für $\p=\brac{Binom(n,\vartheta:\vartheta\in(0,1)}$
+\item Offensichtlich sind Produkte von Exponentialfamilien wieder\\ Exponentialfamilien, z.B. betrachte a) mit $n=1, \theta=(0,1)$, und davon das N-fache Produktexperiment. Dann gilt: $P_\vartheta=Binom(1,\vartheta)^{\otimes N}\\
 P_\vartheta(\brac{x})=\vartheta^{\sm[N]{i=1}x_i}(1-\vartheta)^{N-\sm[N]{i=1}x_i}\\
 =(\underbrace{1-\vartheta}_{C(\vartheta)})^N\exp\bigg(\underbrace{\sm[N]{i=1}x_i}_{T_1(x)}\underbrace{log\brc{\dfrac{\vartheta}{1-\vartheta}}}_{g_1(\vartheta)}\bigg)\underbrace{1_{\brac{0,1}}(x)}_{h(x)}$\\
 Somit ist $T(x)=\sm[N]{i=1}x_i$ suffizient.
-\item Sei $\vartheta=(\mu,\sigma^2)\in\Theta=\R\times\R^+\setminus\brac{0},\ \p_\vartheta=N(\mu,\sigma^2)^\stuff$\\
+\item Sei $\vartheta=(\mu,\sigma^2)\in\theta=\R\times\R^+\setminus\brac{0},\ \p_\vartheta=N(\mu,\sigma^2)^\stuff$\\
 und $\mu=\lambda^n$. Dann gilt \[
-\dfrac{dP_\vartheta}{d\mu}(x_1,...,x_n)=\underbrace{\brc{\dfrac{1}{\sqrt{2\pi\sigma^2}}}^ne^{-\dfrac{n\mu^2}{2\sigma^2}}}_{C(\vartheta)}\exp\bigg(\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\vartheta)}\underbrace{\sm[n]{i=1}x_i}_{h(x)}-\underbrace{\dfrac{1}{2\varsigma^2}}_{g_2(\vartheta)}\underbrace{\sm[n]{i=1}x_i^2}_{T_2(i)}\bigg)
+\dfrac{dP_\vartheta}{d\mu}(x_1,...,x_n)=\underbrace{\brc{\dfrac{1}{\sqrt{2\pi\sigma^2}}}^ne^{-\dfrac{n\mu^2}{2\sigma^2}}}_{C(\vartheta)}\exp\\bigg(\underbrace{\dfrac{\mu}{\sigma^2}}_{g_1(\vartheta)}\underbrace{\sm[N]{i=1}x_i}_{h(x)}-\underbrace{\dfrac{1}{2\varsigma^2}}_{g_2(\vartheta)}\underbrace{\sm[N]{i=1}x_i^2}_{T_2(i)}\bigg)
 \]
 Also liegt eine Exponentialfamilie mit $k=2$ und suffiziente Statistik\[
 T(x)=(T_1(x),T_2(x))=\brc{\sm[N]{i=1}x_i,\sm[N]{i=1}x_i^2}\]
@@ -1666,9 +1666,9 @@ $\brc{\overline{x_n},\dfrac{1}{n-1}\sm[n]{i=1}(x_i-\overline{x_n})^2}$(ebenfalls
 \label{10.16} 
 Sei $\mc{U}_{(a,b)}=\dfrac{\lambda\vert_{(a,b)}}{b-a}$ die Gleichverteilung auf $(a,b), b>a$. Sei \\
 $\mc{P}=\brac{\mc{U}_{(a,b)}^\stuff:\vartheta=(a,b)\in\R^2, a<b}$. Aus \hyperref[10.13]{Definition 10.13} folgt sofort, dass in einer Exponentialfamilie gilt\[
-P_{\vartheta_1}\sim P_{\vartheta_2}\forall\vartheta_1,\vartheta_2\in\Theta.\]
+P_{\vartheta_1}\sim P_{\vartheta_2}\forall\vartheta_1,\vartheta_2\in\theta\]
 Somit ist $\mc{P}$ sicher keine Exponentialfamilie. Aber $T(x)=\brc{\min\limits_{i=1,...,n}x_i,\max\limits_{i=1,...,n}x_i}$ ist suffizient, denn:\[
-\dfrac{dP_\vartheta}{d\lambda^n}(x)=\dfrac{1}{(b-a)^n}\prod\limits_{i=1}^n1_{(a,b)}(x_i)=\dfrac{1}{(b-a)^n}1_{(a,\infty)}(\min x_i)1_{(-\infty,b)}(\max x_i),
+\dfrac{dP_\vartheta}{d\lambda^n}(x)=\dfrac{1}{(b-a)^n}\prod\limits_{i=1}^n1_{(a,b)}(x_i)=\dfrac{1}{(b-a)^n}1_{(a,\infty)}(\min x_i)1_{(-\infty,b)}(\max x_i)
 \]
 womit das Neyman-Kriterium erfüllt ist.
 
@@ -1680,7 +1680,7 @@ Der Satz von Rao-Blackwell bietet ein Verfahren zur Verbesserung erwartungstreue
 Sei $(\Omega,\f,\p)$ ein SE.\begin{enumerate}[label=(\alph*)]
 \item Ein statistisches Funktional $g:\mc{P}\ra\R$ heißt \underline{erwartungstreu schätzbar}, falls eine erwartungstreuer Punktschätzer für g existiert.
 \item Sei g erwartungstreu schätzbar. Dann heißt ein erwartungstreuer Schätzer $h^*:\Omega\ra\R$\\
-\underline{gleichmäßig bester erwartungstreuer (UMVU) Schätzer} für g, falls $Var_\vartheta(h^*)<\infty\forall\vartheta\in\theta$ und\[
+\underline{gleichmäßig bester erwartungstreuer (UMVU) Schätzer} für g, falls $Var_\vartheta(h^*)<\infty\;\forall\vartheta\in\theta$ und\[
 Var_{\vartheta}(h^*)=\min\limits_{\substack{\text{h erw.treu}\\\text{für g}}}Var_\vartheta(h)\quad\forall\vartheta\in\Theta\] gilt.
 \end{enumerate}
 
@@ -1719,7 +1719,7 @@ $\Ra Cov_\vartheta(d,h^*)=0$\QED
 Sei $\rraum$ SE.\begin{enumerate}[label=(\alph*)]
 \item Eine $\sigma$-Algebra $\tau\subseteq\f$ heißt \underline{vollständig (für $\p$)}, falls gilt:\\
 $\forall f:\Omega\ra\R, \tau-messbar, f\in\lp{1}P_\vartheta)\quad \forall\vartheta$ mit \\
-$E\vartheta(f)=0\quad\forall\vartheta$ ist\[
+$E_\vartheta(f)=0\quad\forall\vartheta$ ist\[
 f=0\quad P_\vartheta\vert_\tau-f.s.\quad\forall\vartheta\]
 \item Eine Statistik $T:(\Omega,\f)\ra(\Omega',\f')$ heißt \underline{vollständig}, falls  $T^{-1}(\f')=\sigma(T)$ vollständig ist.
 \item Eine $\sigma$-Algebra $\tau\subseteq\f$ (eine Statistik T) heißt \underline{beschränkt vollständig}, falls \hyperref[11.1]{(11.1)} für alle beschränkten messbaren f gilt.
@@ -1762,7 +1762,7 @@ $\Ra h(k)=0\quad \forall k\in\N_0$
 \marginpar{18.Vorlesung, 28.06.2018}
 Sei $g:\mc{P}\ra\R$ erwartungstreu schätzbar und h ein erwartungstreuer Schätzer für $g$ mit $Var_\vartheta(h)<\infty\quad\forall\vartheta$. Dann gilt\begin{enumerate}[label=(\alph*)]
 \item Ist $\tau\subseteq\f$ suffizient und vollständig für $\mc{P}$, dann ist \[
-h^*:=E_\bullet(h|z)\]
+h^*:=E_\bullet(h|\tau)\]
 der (f.s. eindeutige) UMVUE für $g$.
 \item Ist $T:\Omega\ra\Omega'$ eine suffiziente und vollständige Statistik, dann ist $f^*\circ T$ mit $f^*(t)=E_\bullet(h|T=t)$ der (f.s. eindeutige) UMVUE für $g$.
 \end{enumerate}
@@ -1953,7 +1953,7 @@ Dann ist die Ordnungsstatistik $Y$ vollständig für \[
 \p^n=\brac{P^\stuff:P\in\p}\]
 falls $\p$ konvex ist.
 \end{enumerate}
-\marginpar{20.Vorlesung, 05.08.2018}
+\marginpar{20.Vorlesung, 05.07.2018}
 \beweis
 \begin{enumerate}[label=(\alph*)]
 \item Sei $f:\prod\limits_{i=1}^n\Omega_i\ra\R$ messbar (bzgl. $\kreuz\limits_{i=1}^n\f_i$) und integrierbar mit \[\int fd\kreuz\limits_{i=1}^nP_i=0\qf P_i\in\p_i\hfill (*(\]
@@ -2003,7 +2003,7 @@ $\dfrac{dQ_i}{dP}=1_{B_i}P(B_i)^{-1}\xRightarrow{Q_i\in\p} 0=\int fdQ_i=\dfrac{1
 
 \item Für die Klassen $\p$ aus i) erhält man durch Lehmann-Scheffe \[
 F_n(t)=\dfrac{1}{n}\sumi 1_{\brac{x_i\leq t}}=\dfrac{1}{n}\sumi 1_{\brac{x_{(i)}\leq t}}\quad\text{(Empirische Verteilungsfunktion)}\]
-als UMVUE für die Verteilungsfunktion \[F(t)P((-\infty,t]),\ t\in\R\text{ für }X_i\text{ iid. }X_i\sim P\sim\p\]
+als UMVUE für die Verteilungsfunktion \[F(t)P((-\infty,t]),\ t\in\R\text{ für }X_i\text{ i.i.d.. }X_i\sim P\sim\p\]
 
 \item Man kann zeigen, dass für $\brac{N(a,1)^n:a\in\R}$ die Ordnungsstatistik nicht vollständig ist (die Menge ist nicht konvex).\\
 Sei nun $\p^n=\brac{P_\vartheta^\stuff:\vartheta\in\Theta, P_\vartheta\in M_1(\R,B(\R))}$ und $g:\p^n\ra\R$ ein statistisches Funktional von Interesse.\\
@@ -2045,7 +2045,7 @@ $(*)=\mat{n\\m}^{-1}\sum\limits_{1\leq i_1<...<i_m\leq n}h(x_{i_1},...,x_{i_m})=
 
 \subsection{Beispiel}
 \label{12.7}
-Für die 5 Verteilungsfamilien $\p$ aus Beispiel 12.3 i) sind folgende $\uu$-Satistiken UMVUE, wobei $x_1,...,x_n$ iid. $P_\vartheta$\begin{enumerate}[label=(\alph*)]
+Für die 5 Verteilungsfamilien $\p$ aus Beispiel 12.3 i) sind folgende $\uu$-Satistiken UMVUE, wobei $x_1,...,x_n$ i.i.d.. $P_\vartheta$\begin{enumerate}[label=(\alph*)]
 \item Betrachte $g(\vartheta)=var_\vartheta(x_1)$ und $\p'=\brac{P\in\p:var_\vartheta(x_1)<\infty}$. Für \\
 $h(x_1,x_2)=\dfrac{1}{2}(x_1-x_2)^2$ gilt $E_{P_\vartheta}(h)=g(\vartheta)$ und $\uu_n=E(\tilde h|Y_n)=...=\dfrac{1}{n-1}\sumi (x_i-\overline{x_n})^2$
 \item Betrachte $g(\vartheta)=E(|x_1-x_2|)$ ( Gini's mean difference) und\\
@@ -2082,7 +2082,7 @@ Dann ist $T=\dfrac{1}{n}\sumi x_i$ suffizient und vollständig für $\p$ und \[
 V=\dfrac{1}{n-1}\sumi (x_i-\overline{x}_n)^2\]
 hängt in der Verteilung nicht von $\mu$ ab.\\
 Folglich sind T und V unabhängig
-$\\\Ra$ Zähler und Nenner der t-Statistik $t_n=\dfrac{T}{V^{\dfrac{1}{2}}}$ sind unabhängig $\forall \mu\in\R$ und $\sigma^2>0$, falls $X_i$ iid mit $X_i\sim N(\mu,\sigma^2)$
+$\\\Ra$ Zähler und Nenner der t-Statistik $t_n=\dfrac{T}{V^{\dfrac{1}{2}}}$ sind unabhängig $\forall \mu\in\R$ und $\sigma^2>0$, falls $X_i$ i.i.d. mit $X_i\sim N(\mu,\sigma^2)$
 
 
 
@@ -2168,7 +2168,7 @@ Beschreibt $I_\vartheta$ die Fisher-Information für n=1 (für $P\vartheta$) und
 
 
 \pagebreak
-\section{Bayer-Schätzer}
+\section{Bayes-Schätzer}
 Bisher: Frequentistische Sicht, d.h. der Modellparameter $\vartheta$ ist fest aber unbekannt.\\
 Jetzt: Bayesianische Sicht, der Modellparameter $\vartheta$ ist zufällig (und die Verteilung spiegelt unser Vorwissen wider)\\
 Wir nehmen an, dass $(\Theta,\f_\Theta)$ ein messbarer Raum und mit $\brac{\vartheta}\in\f_\Theta\qf\vartheta\in\Theta$ und dass \[\vartheta\mapsto P_\vartheta(A)\qf A\in\f_\Theta\]
@@ -2232,3 +2232,4 @@ Ist $P_\vartheta=N(\vartheta,1)^\stuff$, $\Theta=\R$, $g(\vartheta)=\vartheta$ u
 \section{Lineare Regression}
 siehe Folien
 \end{document}
+
